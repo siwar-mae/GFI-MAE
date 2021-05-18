@@ -11,13 +11,15 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class EquipmentFixtures extends Fixture
 {
     private $passwordEncoder;
+
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
+
     public function load(ObjectManager $manager)
     {
-        $agency1 = $manager->getRepository(Agency::class)->findOneBy(['code'=>122]);
+        $agency1 = $manager->getRepository(Agency::class)->findOneBy(['code' => 122]);
         $equipment = new Equipment();
         $equipment->setReference('SN° K9P0180349');
         $equipment->setDesignation('Windows');
@@ -31,7 +33,7 @@ class EquipmentFixtures extends Fixture
         $equipment2->setDesignation('Imprimante');
         $equipment2->setNature('hardware');
         $equipment2->setPrice(1200.0);
-        $agency2 = $manager->getRepository(Agency::class)->findOneBy(['code'=>118]);
+        $agency2 = $manager->getRepository(Agency::class)->findOneBy(['code' => 118]);
         $equipment2->setAgency($agency2);
         $manager->persist($equipment2);
         $manager->flush();

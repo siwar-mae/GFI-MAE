@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller\Api\Equipement;
-
 
 use App\Service\Equipement\PostService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,13 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PostController extends AbstractController
 {
-
     /**
      * @Route("/api/equipements/post", name="api_equipement_post", options={"expose": true}, methods={"POST", "HEAD"})
      *
      * @return JsonResponse
      */
-        public function __invoke(PostService $postService, Request $request)
+    public function __invoke(PostService $postService, Request $request)
     {
         $arrayEquipement = json_decode($request->getContent(), true);
         if (null === $arrayEquipement or 'undefined' === $arrayEquipement) {
@@ -28,24 +25,25 @@ class PostController extends AbstractController
         if (in_array(null, $arrayEquipement)) {
             $errors = [];
 
-            if ($arrayEquipement['ref'] === null) {
+            if (null === $arrayEquipement['ref']) {
                 array_push($errors, 'ref_null');
             }
-            if ($arrayEquipement['price'] === null) {
+            if (null === $arrayEquipement['price']) {
                 array_push($errors, 'price_null');
             }
-            if ($arrayEquipement['nature'] === null) {
+            if (null === $arrayEquipement['nature']) {
                 array_push($errors, 'nature_null');
             }
-            if ($arrayEquipement['designation'] === null) {
+            if (null === $arrayEquipement['designation']) {
                 array_push($errors, 'designation_null');
             }
+
             return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
         if ($postService->post($arrayEquipement)) {
             return new JsonResponse(['status' => 'ok', 'code' => Response::HTTP_CREATED], Response::HTTP_CREATED);
         }
+
         return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'equipement_not_added'], 400);
     }
-
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Service\Type;
-
 
 use App\Manager\TypeManager;
 
@@ -21,6 +19,5 @@ class PostService
     public function post($description)
     {
         return $this->manager->post($description);
-
     }
 }

@@ -35,7 +35,6 @@ class InterventionRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-
     /*
     public function findOneBySomeField($value): ?Intervention
     {
@@ -50,15 +49,14 @@ class InterventionRepository extends ServiceEntityRepository
 
     public function findAllByUser($user)
     {
-        if ($user !== "") {
+        if ('' !== $user) {
             return $this->createQueryBuilder('b')
                 ->join('b.agency', 'c')->addSelect('c')
                 ->where('b.intervenant = :user')
                 ->setParameter('user', $user)
                 ->getQuery()
                 ->getArrayResult();
-        }
-        else{
+        } else {
             return $this->createQueryBuilder('b')
                 ->join('b.agency', 'c')->addSelect('c')
                 ->getQuery()

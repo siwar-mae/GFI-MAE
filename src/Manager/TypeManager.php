@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Manager;
 
 use App\Entity\Type;
@@ -28,12 +27,14 @@ class TypeManager
         $this->entityManager = $entityManager;
     }
 
-    public function getData(){
+    public function getData()
+    {
         return $this->repository->findAllArrayResult();
     }
 
     /**
      * @param $type
+     *
      * @return bool
      *
      * @throws \Exception

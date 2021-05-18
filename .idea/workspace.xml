@@ -7,54 +7,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/components/vueFormGenerator/customField/CurrencyInputMazars.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/components/vueFormGenerator/customField/DatePickerMazars.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/components/vueFormGenerator/customField/OnBlurInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/components/vueFormGenerator/customField/SelectMazars.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/utils/LocalStorage/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/utils/api/user/Me.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/utils/api/user/Switch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/utils/http/UriTransformer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/utils/http/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/Sorting icons.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/back_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/back_enabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/back_enabled_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/details_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/details_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/forward_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/forward_enabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/forward_enabled_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lib/advanced-datatable/css/images/sort_desc_disabled.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Home/IndexController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Intervention/AddController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Agency/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Agency/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Equipement/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Equipement/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Equipement/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Equipement/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Home/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Type/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Type/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Type/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Type/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AgencyFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AgencyFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/EquipmentFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/EquipmentFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/TypeFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/TypeFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Agency.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Agency.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Equipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Equipment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Intervention.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Intervention.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/InterventionManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/AgencyManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/AgencyManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/EquipementManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/EquipementManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/InterventionManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/InterventionManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/TypeManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/TypeManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/AgencyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AgencyRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/EquipmentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EquipmentRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/TypeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TypeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Home/IndexService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/intervention/add/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/add/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Agency/ListService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Agency/ListService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Equipement/ListService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Equipement/ListService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Equipement/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Equipement/PostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Intervention/ListService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Intervention/ListService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Intervention/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Intervention/PostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Type/ListService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Type/ListService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Type/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Type/PostService.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,9 +75,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -353,18 +346,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Equipement" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\GFI\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\GFI\public\lib\advanced-datatable\css" />
-      <recent name="C:\wamp64\www\GFI\assets\js\components\home" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api\Home" />
-      <recent name="C:\wamp64\www\GFI\templates\home" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\GFI\src\Service\Equipement" />
       <recent name="C:\wamp64\www\GFI\src\Controller\Api\Equipement" />
@@ -372,20 +358,15 @@
       <recent name="C:\wamp64\www\GFI\src\Controller\Api\Type" />
       <recent name="C:\wamp64\www\GFI\src\Controller\Api" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\GFI\public\lib\advanced-datatable\css" />
+      <recent name="C:\wamp64\www\GFI\assets\js\components\home" />
+      <recent name="C:\wamp64\www\GFI\src\Controller\Api\Home" />
+      <recent name="C:\wamp64\www\GFI\templates\home" />
+      <recent name="C:\wamp64\www\GFI\src\Controller\Api" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -475,14 +456,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -501,6 +475,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">

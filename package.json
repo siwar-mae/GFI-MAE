@@ -25,6 +25,7 @@
     "dependencies": {
         "@burhanahmeed/vue-modal-2": "^1.1.11",
         "@coreui/coreui": "^3.4.0",
+        "@coreui/vue": "^3.2.9",
         "@kouts/vue-modal": "^2.0.10",
         "axios": "^0.21.1",
         "blendid": "^4.5.3",
@@ -45,7 +46,9 @@
         "vue-table-dynamic": "^0.4.5",
         "vue-template-compiler": "^2.6.12",
         "vue-toast-notification": "^0.6.1",
+        "vuejs-datatable": "^2.0.0-alpha.7",
         "vuejs-datepicker": "^1.6.2",
-        "vuejs-datetimepicker": "^1.1.13"
+        "vuejs-datetimepicker": "^1.1.13",
+        "vuetify-datatable-extended": "^0.2.13"
     }
 }

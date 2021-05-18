@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Service\Type;
 
 use App\Manager\TypeManager;

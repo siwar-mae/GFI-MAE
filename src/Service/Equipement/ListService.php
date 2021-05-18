@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Service\Equipement;
 
 use App\Manager\EquipementManager;

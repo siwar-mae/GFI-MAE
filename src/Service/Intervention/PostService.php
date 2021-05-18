@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Service\Intervention;
-
 
 use App\Manager\InterventionManager;
 
@@ -21,6 +19,5 @@ class PostService
     public function post($arrayIntervention)
     {
         return $this->manager->post($arrayIntervention);
-
     }
 }

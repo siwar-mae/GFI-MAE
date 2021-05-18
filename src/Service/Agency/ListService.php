@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Service\Agency;
-
 
 use App\Manager\AgencyManager;
 
@@ -24,6 +22,5 @@ class ListService
     public function getData()
     {
         return $this->manager->getData();
-
     }
 }
