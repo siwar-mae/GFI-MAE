@@ -95,11 +95,5 @@ export default {
 </script>
 
 <style scoped>
-.truncate{
-  width: 500px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 </style>
 

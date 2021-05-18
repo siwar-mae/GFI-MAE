@@ -11,15 +11,13 @@ import SelectMazars from "./components/vueFormGenerator/customField/SelectMazars
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 import CoreuiVue from '@coreui/vue';
-import { CDataTable } from '@coreui/vue/src';
-
 Vue.use(CoreuiVue);
+
 Vue.use(Resource);
 Vue.use(VueRouter);
 Vue.use(VueToast);
 Vue.component('field-date-picker-mazars', DatePickerMazars);
 Vue.component('field-select-mazars', SelectMazars);
-Vue.use(DataTable)
 
 Vue.filter('formatDate', function(value) {
     if (value) {
