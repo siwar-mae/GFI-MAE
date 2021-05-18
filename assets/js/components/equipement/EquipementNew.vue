@@ -1,0 +1,180 @@
+<template>
+    <div style="margin: 10px">
+        <form class="cmxform form-horizontal style-form" id="signupForm">
+            <div class="form-group ">
+                <label for="ref" class="control-label col-lg-4">Saisir Référence : </label>
+                <div class="col-lg-8">
+                    <input class="form-control " id="ref" name="type" v-model="model.ref" placeholder="Référence"/>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="designation" class="control-label col-lg-4">Saisir désignation : </label>
+                <div class="col-lg-8">
+                    <input class="form-control "
+                           id="designation"
+                           name="designation"
+                           v-model="model.designation"
+                           placeholder="Désignation"/>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="price" class="control-label col-lg-4">Saisir prix : </label>
+                <div class="col-lg-8">
+                    <input class="form-control " id="price" name="price" v-model="model.price"/>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="nature" class="control-label col-lg-4">Saisir nature : </label>
+                <div class="col-lg-8">
+                    <select class="form-control " id="nature" name="type" v-model="model.nature">
+                        <option value="" disabled>Veuillez choisir une option</option>
+                        <option value="software">Software</option>
+                        <option value="hardware">Hardware</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-right">
+                        <button class="btn btn-theme" type="button" @click="postAndReturn">Ajouter Et Revenir</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">Ajouter Et Continuer</button>
+                        <button class="btn btn-theme04" type="button" @click="cancel">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    import Vue from 'vue';
+    export default {
+        name: "EquipementNew",
+        data () {
+            return {
+                model: {
+                    ref: '',
+                    price: 0,
+                    designation: '',
+                    nature: '',
+                    agency: '',
+                },
+                equipements: [],
+            }
+        },
+        methods: {
+            getOptionsEquipement: async function(){
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    }
+                };
+                const axios = require('axios');
+                let responseEquipements = await axios.get('/api/equipements/list', {
+                    params: {
+                        'code': this.model.agency
+                    },config
+                });
+                return responseEquipements.data.map(
+                    function (equipement) {
+                        equipement['label'] = equipement.designation.concat(' ','(',equipement.reference,')')
+                        equipement['value'] = equipement.designation.concat(' ','(',equipement.reference,')')
+                        return equipement;
+                    }
+                );
+            },
+            cancel: function () {
+                this.$root.$emit('cancel')
+            },
+            post: function () {
+                const axios = require('axios');
+                let self = this;
+                const config = {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    }
+                };
+                axios.post('/api/equipements/post', self.model, config)
+                    .then(response => {
+                            Vue.$toast.open({
+                                message: 'Ajout effectué avec succès!',
+                                type: 'success',
+                                position: 'top-right',
+                                autohide: 3000 ,
+                                class: "p-3 mb-2 bg-info text-white"
+                            });
+                        }
+                        , (error) => {
+                            if(self.model.ref === ''){
+                                Vue.$toast.open({
+                                    message: "Veuillez remplir champs référence !",
+                                    type: 'error',
+                                    position: 'top-right',
+                                    autohide: 3000 ,
+                                    class: "p-3 mb-2 bg-info text-white"
+                                });
+                            }else if(self.model.designation === ''){
+                                Vue.$toast.open({
+                                    message: "Veuillez remplir champs désignation !",
+                                    type: 'error',
+                                    position: 'top-right',
+                                    autohide: 3000 ,
+                                    class: "p-3 mb-2 bg-info text-white"
+                                });
+                            }else if(self.model.price === 0){
+                                Vue.$toast.open({
+                                    message: "Veuillez remplir champs prix !",
+                                    type: 'error',
+                                    position: 'top-right',
+                                    autohide: 3000 ,
+                                    class: "p-3 mb-2 bg-info text-white"
+                                });
+                            }
+                            else if(self.model.nature === ''){
+                                Vue.$toast.open({
+                                    message: "Veuillez choisir la nature de l'équipement !",
+                                    type: 'error',
+                                    position: 'top-right',
+                                    autohide: 3000 ,
+                                    class: "p-3 mb-2 bg-info text-white"
+                                });
+                            }else {
+                                Vue.$toast.open({
+                                    message: "Erreur d'ajout!",
+                                    type: 'error',
+                                    position: 'top-right',
+                                    autohide: 3000 ,
+                                    class: "p-3 mb-2 bg-info text-white"
+                                });
+                            }
+                        }
+                    );
+            },
+            postAndContinue: async function () {
+                this.post();
+                this.equipements = await this.getOptionsEquipement();
+                this.$root.$emit('equipements', this.equipements);
+                this.model.designation = '';
+                this.model.price = 0;
+                this.model.ref = '';
+                this.model.nature = '';
+            },
+            postAndReturn: async function () {
+                this.post();
+                this.equipements = await this.getOptionsEquipement();
+                this.$root.$emit('equipements', this.equipements);
+                this.cancel()
+            },
+        },
+        mounted() {
+            this.model.agency = this.$root.$refs.InterventionConfig.agency;
+            this.model.agency.substr(this.model.agency.indexOf('(') + 1, 3);
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

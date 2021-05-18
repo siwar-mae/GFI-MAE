@@ -47,4 +47,16 @@ class EquipmentRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllArrayResult($agency)
+    {
+        $qb = $this->getEntityManager()
+            ->createQueryBuilder()
+            ->select('d')
+            ->from(Equipment::class, 'd')
+            ->join('d.agency', 'agency')
+            ->andWhere('agency.code LIKE :agency')
+            ->setParameter('agency', $agency);
+        return $qb->getQuery()->getArrayResult();
+    }
 }

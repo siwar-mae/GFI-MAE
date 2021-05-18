@@ -19,7 +19,7 @@ class Intervention
 
     /**
      * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", unique=true)
      */
     private $number;
 
@@ -29,18 +29,29 @@ class Intervention
     private $startDate;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private $EndDate;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text", length=65535)
      */
     private $observation;
 
     /**
+     * @return mixed
+     */
+    public function getObservation()
+    {
+        return $this->observation;
+    }
+
+    /**
+     * @param mixed $observation
+     */
+    public function setObservation($observation): void
+    {
+        $this->observation = $observation;
+    }
+
+    /**
      * One Intervention has One User.
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $intervenant;
@@ -78,8 +89,7 @@ class Intervention
     }
 
     /**
-     * One Intervention has One Agency.
-     * @ORM\OneToOne(targetEntity="Agency")
+     * @ORM\ManyToOne(targetEntity="Agency")
      * @ORM\JoinColumn(name="agency_id", referencedColumnName="id")
      */
     private $agency;
@@ -109,30 +119,6 @@ class Intervention
     public function setStartDate(\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
-
-        return $this;
-    }
-
-    public function getEndDate(): ?\DateTimeInterface
-    {
-        return $this->EndDate;
-    }
-
-    public function setEndDate(\DateTimeInterface $EndDate): self
-    {
-        $this->EndDate = $EndDate;
-
-        return $this;
-    }
-
-    public function getObservation(): ?string
-    {
-        return $this->observation;
-    }
-
-    public function setObservation(string $observation): self
-    {
-        $this->observation = $observation;
 
         return $this;
     }

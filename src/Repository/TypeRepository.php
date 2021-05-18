@@ -47,4 +47,13 @@ class TypeRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllArrayResult()
+    {
+        $qb = $this->getEntityManager()
+            ->createQueryBuilder()
+            ->select('d')
+            ->from(Type::class, 'd');
+        return $qb->getQuery()->getArrayResult();
+    }
 }

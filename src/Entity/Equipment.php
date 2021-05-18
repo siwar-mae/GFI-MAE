@@ -18,7 +18,7 @@ class Equipment
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $reference;
 
@@ -37,6 +37,12 @@ class Equipment
      */
     private $nature;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Agency")
+     * @ORM\JoinColumn(name="agency_id", referencedColumnName="id")
+     */
+    private $agency;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +51,22 @@ class Equipment
     public function getReference(): ?string
     {
         return $this->reference;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAgency()
+    {
+        return $this->agency;
+    }
+
+    /**
+     * @param mixed $agency
+     */
+    public function setAgency($agency): void
+    {
+        $this->agency = $agency;
     }
 
     public function setReference(string $reference): self

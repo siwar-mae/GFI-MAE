@@ -19,22 +19,22 @@ class InterventionRepository extends ServiceEntityRepository
         parent::__construct($registry, Intervention::class);
     }
 
-    // /**
-    //  * @return Intervention[] Returns an array of Intervention objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+//     /**
+//      * @return Intervention[] Returns an array of Intervention objects
+//      */
+//
+//    public function findByExampleField($value)
+//    {
+//        return $this->createQueryBuilder('i')
+//            ->andWhere('i.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('i.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getArrayResult()
+//        ;
+//    }
+
 
     /*
     public function findOneBySomeField($value): ?Intervention
@@ -47,4 +47,22 @@ class InterventionRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllByUser($user)
+    {
+        if ($user !== "") {
+            return $this->createQueryBuilder('b')
+                ->join('b.agency', 'c')->addSelect('c')
+                ->where('b.intervenant = :user')
+                ->setParameter('user', $user)
+                ->getQuery()
+                ->getArrayResult();
+        }
+        else{
+            return $this->createQueryBuilder('b')
+                ->join('b.agency', 'c')->addSelect('c')
+                ->getQuery()
+                ->getArrayResult();
+        }
+    }
 }

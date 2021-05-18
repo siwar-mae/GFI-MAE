@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}GFI-MAE{% endblock %}</title>
     {% block stylesheets %}
         <!-- Favicons -->
         <link href="public/img/favicon.png" rel="icon">
@@ -44,13 +44,13 @@
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
-                <h2 class="form-login-heading">Please sign in</h2>
+                <h2 class="form-login-heading">Veuillez vous connecter</h2>
                 <div class="login-wrap">
                     <label for="inputEmail">Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
                     <br>
-                    <label for="inputPassword">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
 
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
@@ -61,13 +61,13 @@
 
                     <div class="checkbox mb-3">
                         <label>
-                            <input type="checkbox" name="_remember_me"> Remember me
+                            <input type="checkbox" name="_remember_me"> Se souvenir de moi
                         </label>
                         <span class="pull-right">
-                                <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+                                <a data-toggle="modal" href="login.html#myModal"> Mot de passe oublié?</a>
                         </span>
                     </div>
-                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SE CONNECTER</button>
                 </div>
             </form>
         </div>
@@ -81,7 +81,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("img/login-bg.jpg", {
+        $.backstretch("img/login-bg-21.jpg", {
             speed: 500
         });
     </script>
