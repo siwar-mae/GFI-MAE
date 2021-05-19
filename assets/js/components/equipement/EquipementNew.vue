@@ -18,9 +18,14 @@
                 </div>
             </div>
             <div class="form-group ">
-                <label for="price" class="control-label col-lg-4">Saisir prix : </label>
+                <label class="control-label col-lg-4">Saisir prix : </label>
                 <div class="col-lg-8">
-                    <input class="form-control " id="price" name="price" v-model="model.price"/>
+                  <currency-input
+                      class="form-control"
+                      v-model="model.price"
+                      currency="TND"
+                      locale="tn"
+                  />
                 </div>
             </div>
             <div class="form-group ">
@@ -47,9 +52,12 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    export default {
+import { CurrencyInput } from 'vue-currency-input'
+import Vue from 'vue';
+
+export default {
         name: "EquipementNew",
+        components: { CurrencyInput },
         data () {
             return {
                 model: {

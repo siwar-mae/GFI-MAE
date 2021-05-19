@@ -59,7 +59,6 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                     <!-- /form-panel -->
@@ -84,7 +83,6 @@
         components: {
             InterventionConfig, 'Modal': VueModal
         },
-
         methods: {
             post: function () {
                 const axios = require('axios');
@@ -219,12 +217,6 @@
     };
 </script>
 <style>
-    .modal-footer {
-        padding: 15px 0px 0px 0px;
-        border-top: 1px solid #e5e5e5;
-        margin-left: -14px;
-        margin-right: -14px;
-    }
     textarea {
         padding: 8px;
         border: 1px solid #aeaeae;

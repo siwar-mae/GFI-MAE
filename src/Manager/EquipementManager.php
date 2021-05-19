@@ -1,13 +1,11 @@
 <?php
 
-
 namespace App\Manager;
 
 use App\Entity\Agency;
 use App\Entity\Equipment;
 use App\Repository\AgencyRepository;
 use App\Repository\EquipmentRepository;
-use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Component\Security\Core\Security;
@@ -36,14 +34,17 @@ class EquipementManager
         $this->entityManager = $entityManager;
     }
 
-    public function getData($code){
+    public function getData($code)
+    {
         $pos = strpos($code, '(');
-        $code = substr($code, $pos + 1 , 3);
+        $code = substr($code, $pos + 1, 3);
+
         return $this->repository->findAllArrayResult($code);
     }
 
     /**
      * @param $arrayEquipement
+     *
      * @return bool
      *
      * @throws \Exception
@@ -52,8 +53,8 @@ class EquipementManager
     {
         $equipement = new Equipment();
         $pos = strpos($arrayEquipement['agency'], '(');
-        $arrayEquipement['agency'] = substr($arrayEquipement['agency'], $pos + 1 , 3);
-        $agency = $this->agencyRepository->findOneBy(array('code' => $arrayEquipement['agency']));
+        $arrayEquipement['agency'] = substr($arrayEquipement['agency'], $pos + 1, 3);
+        $agency = $this->agencyRepository->findOneBy(['code' => $arrayEquipement['agency']]);
         $equipement->setAgency($agency);
         $equipement->setDesignation($arrayEquipement['designation']);
         $equipement->setNature($arrayEquipement['nature']);
@@ -64,5 +65,4 @@ class EquipementManager
 
         return true;
     }
-
 }

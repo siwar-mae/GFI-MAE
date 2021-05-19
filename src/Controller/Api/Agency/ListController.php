@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Api\Agency;
 
 use App\Service\Agency\ListService;

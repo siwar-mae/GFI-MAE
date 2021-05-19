@@ -4,6 +4,8 @@
         "@symfony/webpack-encore": "^1.0.0",
         "bootstrap-vue": "^2.21.2",
         "core-js": "^3.0.0",
+        "postcss": "^8.2.15",
+        "postcss-loader": "^5.3.0",
         "regenerator-runtime": "^0.13.2",
         "sass": "^1.32.13",
         "sass-loader": "^11.1.1",
@@ -11,7 +13,7 @@
         "ts-loader": "^9.1.2",
         "typescript": "^4.2.4",
         "vue-router": "^3.5.1",
-        "webpack": "^5.37.0",
+        "webpack": "^5.37.1",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -25,10 +27,14 @@
     "dependencies": {
         "@burhanahmeed/vue-modal-2": "^1.1.11",
         "@coreui/coreui": "^3.4.0",
+        "@coreui/vue": "^3.2.9",
         "@kouts/vue-modal": "^2.0.10",
+        "autoprefixer": "^10.2.5",
         "axios": "^0.21.1",
         "blendid": "^4.5.3",
+        "bootstrap": "^5.0.1",
         "moment": "^2.29.1",
+        "postcss-cli": "^8.3.1",
         "tapable": "^2.2.0",
         "v-calendar": "^2.3.0",
         "v-data-table": "^2.1.0",
@@ -36,6 +42,7 @@
         "v-toaster": "^1.0.3",
         "v-vbtn": "^1.0.0",
         "vue": "^2.6.12",
+        "vue-currency-input": "^1.22.6",
         "vue-form-generator": "^2.3.4",
         "vue-js-modal": "^2.0.0-rc.6",
         "vue-loader": "^15.9.6",
@@ -45,7 +52,9 @@
         "vue-table-dynamic": "^0.4.5",
         "vue-template-compiler": "^2.6.12",
         "vue-toast-notification": "^0.6.1",
+        "vuejs-datatable": "^2.0.0-alpha.7",
         "vuejs-datepicker": "^1.6.2",
-        "vuejs-datetimepicker": "^1.1.13"
+        "vuejs-datetimepicker": "^1.1.13",
+        "vuetify-datatable-extended": "^0.2.13"
     }
 }

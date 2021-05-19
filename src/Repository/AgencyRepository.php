@@ -48,13 +48,13 @@ class AgencyRepository extends ServiceEntityRepository
     }
     */
 
-
     public function findAllArrayResult()
     {
         $qb = $this->getEntityManager()
             ->createQueryBuilder()
             ->select('d')
             ->from(Agency::class, 'd');
+
         return $qb->getQuery()->getArrayResult();
     }
 }

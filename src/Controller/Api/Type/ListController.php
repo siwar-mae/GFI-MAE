@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Api\Type;
 
 use App\Service\Type\ListService;

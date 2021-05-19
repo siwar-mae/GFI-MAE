@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller\Api\Intervention;
-
 
 use App\Service\Intervention\PostService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,25 +33,25 @@ class PostController extends AbstractController
         if (in_array(null, $arrayIntervention)) {
             $errors = [];
 
-            if ($arrayIntervention['startDate'] === null) {
+            if (null === $arrayIntervention['startDate']) {
                 array_push($errors, 'start_date_null');
             }
-            if ($arrayIntervention['number'] === null) {
+            if (null === $arrayIntervention['number']) {
                 array_push($errors, 'number');
             }
-            if ($arrayIntervention['observation'] === null) {
+            if (null === $arrayIntervention['observation']) {
                 array_push($errors, 'observation_null');
             }
-            if ($arrayIntervention['structure'] === null) {
+            if (null === $arrayIntervention['structure']) {
                 array_push($errors, 'structure_null');
             }
+
             return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
         if ($postService->post($arrayIntervention)) {
             return new JsonResponse(['status' => 'ok', 'code' => Response::HTTP_CREATED], Response::HTTP_CREATED);
         }
+
         return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'intervention_not_added'], 400);
-
     }
-
 }

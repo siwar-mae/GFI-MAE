@@ -54,6 +54,7 @@ class TypeRepository extends ServiceEntityRepository
             ->createQueryBuilder()
             ->select('d')
             ->from(Type::class, 'd');
+
         return $qb->getQuery()->getArrayResult();
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Manager;
 
 use App\Entity\Agency;
@@ -28,7 +27,8 @@ class AgencyManager
         $this->entityManager = $entityManager;
     }
 
-    public function getData(){
+    public function getData()
+    {
         return $this->repository->findAllArrayResult();
     }
 }

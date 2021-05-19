@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Api\Intervention;
 
 use App\Service\Intervention\ListService;

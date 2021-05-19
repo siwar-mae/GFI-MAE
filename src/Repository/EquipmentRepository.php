@@ -57,6 +57,7 @@ class EquipmentRepository extends ServiceEntityRepository
             ->join('d.agency', 'agency')
             ->andWhere('agency.code LIKE :agency')
             ->setParameter('agency', $agency);
+
         return $qb->getQuery()->getArrayResult();
     }
 }

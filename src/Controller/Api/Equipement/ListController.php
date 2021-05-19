@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Api\Equipement;
 
 use App\Service\Equipement\ListService;

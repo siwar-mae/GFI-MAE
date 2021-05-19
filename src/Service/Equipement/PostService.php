@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Service\Equipement;
-
 
 use App\Manager\EquipementManager;
 
@@ -21,6 +19,5 @@ class PostService
     public function post($arrayEquipement)
     {
         return $this->manager->post($arrayEquipement);
-
     }
 }

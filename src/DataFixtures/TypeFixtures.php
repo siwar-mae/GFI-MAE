@@ -10,10 +10,12 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class TypeFixtures extends Fixture
 {
     private $passwordEncoder;
+
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
+
     public function load(ObjectManager $manager)
     {
         $type = new Type();
@@ -28,7 +30,5 @@ class TypeFixtures extends Fixture
         $type3->setDescription('Cablage');
         $manager->persist($type3);
         $manager->flush();
-
-
     }
 }
