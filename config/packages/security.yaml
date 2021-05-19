@@ -38,4 +38,5 @@ security:
         - { path: ’ˆ/login’, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ’ˆ/*’, roles: [ROLE_ADMIN] }
         - { path: ^/home, roles: [ROLE_USER] }
+        - { path: ^/back, roles: [ROLE_ADMIN] }
         - { path: ^/profile, roles: [ROLE_USER] }
