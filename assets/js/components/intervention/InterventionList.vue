@@ -26,7 +26,7 @@
                         square
                         size="sm"
                     >
-                      {{Boolean(item._toggled) ? 'Hide' : 'Show'}}
+                      {{Boolean(item._toggled) ? 'Hide' : 'Edit'}}
                     </CButton>
                   </td>
                 </template>
@@ -51,7 +51,7 @@ const fields = [
   { key: 'observation', _style:'min-width:100px;' },
   {
     key: 'actions',
-    label: '',
+    label: 'Actions',
     _style: 'width:1%',
     sorter: false,
     filter: false,
