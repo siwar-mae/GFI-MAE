@@ -24,6 +24,11 @@ class UserFixtures extends Fixture
         $user->setFullName('Flen Ben Foulen');
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
         $manager->persist($user);
+        $user2 = new User();
+        $user2->setEmail('Siwar.Bousselmi@gmail.com');
+        $user2->setRoles(['ROLE_USER']);
+        $user2->setFullName('Siwar Bousselmi');
+        $user2->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
         $manager->flush();
     }
 }
