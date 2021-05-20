@@ -6,6 +6,21 @@
     <bookmark url="file://$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" description="                const axios = require('axios');&#10;  ..." line="53" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Backend/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Backend/Home/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Equipement/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Equipement/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Home/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AgencyRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EquipmentRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TypeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
+    </list>
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +278,13 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/coreui/coreui" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/amqp-messenger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/redis-messenger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/sendgrid-mailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
     </include_path>
   </component>
   <component name="ProjectConfigurationFiles">
@@ -300,7 +322,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Equipement" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Backend/User" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\story-feature-0-1\GFI-MAE\node_modules\typescript\lib" />
@@ -308,18 +330,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\GFI\src\Service\Equipement" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api\Equipement" />
-      <recent name="C:\wamp64\www\GFI\src\Service\Type" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api\Type" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Service\Backend\User" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Backend\User" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\assets\js\components\backend\user" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend\user" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Backend\Home" />
       <recent name="C:\wamp64\www\GFI\public\lib\advanced-datatable\css" />
       <recent name="C:\wamp64\www\GFI\assets\js\components\home" />
       <recent name="C:\wamp64\www\GFI\src\Controller\Api\Home" />
-      <recent name="C:\wamp64\www\GFI\templates\home" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />

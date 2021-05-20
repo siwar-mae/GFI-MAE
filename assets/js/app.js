@@ -31,6 +31,8 @@ Vue.use(VueToast);
 Vue.use(IconsPlugin);
 Vue.component('field-date-picker-mazars', DatePickerMazars);
 Vue.component('field-select-mazars', SelectMazars);
+import UserList from './components/backend/user/UserList';
+import UserNew from './components/backend/user/UserNew';
 
 
 Vue.filter('formatDate', function(value) {
@@ -44,5 +46,5 @@ const router = new VueRouter({
 });
 new Vue({
     el: '#app',
-    components: {InterventionNew, InterventionList, Index}
+    components: {InterventionNew, InterventionList, Index, UserList, UserNew}
 });

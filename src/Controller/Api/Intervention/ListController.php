@@ -12,7 +12,7 @@ class ListController extends AbstractController
     /**
      * @Route("/list", name="api_intervention_get_list", options={"expose": true}, methods={"GET", "HEAD"})
      */
-    public function index(ListService $listService)
+    public function index()
     {
         return $this->render('intervention/list/index.html.twig');
     }

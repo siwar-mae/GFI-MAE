@@ -55,6 +55,7 @@
         "vuejs-datatable": "^2.0.0-alpha.7",
         "vuejs-datepicker": "^1.6.2",
         "vuejs-datetimepicker": "^1.1.13",
-        "vuetify-datatable-extended": "^0.2.13"
+        "vuetify-datatable-extended": "^0.2.13",
+        "vuex-i18n": "^1.13.1"
     }
 }
