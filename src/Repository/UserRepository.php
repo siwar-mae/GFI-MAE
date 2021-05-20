@@ -64,4 +64,13 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         ;
     }
     */
+    public function findAllArrayResult()
+    {
+        $qb = $this->getEntityManager()
+            ->createQueryBuilder()
+            ->select('u')
+            ->from(User::class, 'u');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }

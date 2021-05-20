@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ListController extends AbstractController
 {
     /**
-     * @Route("/api/equipements/list", name="api_tequipement_list", options={"expose": true}, methods={"GET", "HEAD"})
+     * @Route("/api/equipements/list", name="api_equipement_list", options={"expose": true}, methods={"GET", "HEAD"})
      */
     public function __invoke(ListService $listService, Request $request)
     {
