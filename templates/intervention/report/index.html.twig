@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta rel="stylesheet" href="https://unpkg.com/v-data-table/dist/v-data-table.css">
+    <title>{% block title %}GFI-MAE{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style-responsive.css" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+<section id="page-container">
+    <div id="content-wrap">
+        <!-- all other page content -->
+        {% block body %}
+            <div class="app header-fixed">
+                <div>
+                    <div class="card mt-6">
+                        <div class="card-header">
+                            <p class="text-right">Numéro intervention : {{intervention.number}}</p>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">Structure : {{ intervention.agency.name }} ({{intervention.agency.code}})</p>
+                            <p class="text-center">Intervenant : </p>
+                            <p class="text-center">Date début : {{ intervention.startDate.date |date('d/m/Y h:m') }}</p>
+                            <p class="text-center">Observation(s) : {{ intervention.observation }}</p>
+                        </div>
+                        <div class="text-start">
+                            <p>Signature :</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</section>
+<!-- js placed at the end of the document so the pages load faster -->
+</body>
+</html>

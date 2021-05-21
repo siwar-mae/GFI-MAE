@@ -66,4 +66,9 @@ class InterventionManager
 
         return ['interventionsByUser' => $interventionsByUser, 'interventions' => $interventions];
     }
+
+    public function getReportData($id)
+    {
+        return $this->repository->findOneBy(['id' => $id]);
+    }
 }

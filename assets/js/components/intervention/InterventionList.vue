@@ -25,8 +25,9 @@
                         variant="outline"
                         square
                         size="sm"
+                        @click="goToReport(item)"
                     >
-                      {{Boolean(item._toggled) ? 'Hide' : 'Edit'}}
+                      {{Boolean(item._toggled) ? 'Hide' : 'Consulter intervention'}}
                     </CButton>
                   </td>
                 </template>
@@ -82,6 +83,11 @@ export default {
               item.agency =  item.agency.name + '(' + item.agency.code + ')'
               return {...item}})
           });
+    },
+    goToReport: function (item){
+      if (item.id !== undefined) {
+        window.open(this.location = '/report/' + item.id)
+      }
     },
   },
   mounted() {

@@ -22,7 +22,6 @@
                                         <b-form-checkbox-group
                                             id="checkbox-group-2"
                                             v-model="model.roles"
-                                            :aria-describedby="ariaDescribedby"
                                             name="flavour-2"
                                         >
                                           <b-form-checkbox value="ROLE_ADMIN">Administrateur</b-form-checkbox>
