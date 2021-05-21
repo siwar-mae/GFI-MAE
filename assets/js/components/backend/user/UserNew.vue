@@ -24,8 +24,8 @@
                                             v-model="model.roles"
                                             name="flavour-2"
                                         >
-                                          <b-form-checkbox value="ROLE_ADMIN">Administrateur</b-form-checkbox>
-                                          <b-form-checkbox value="ROLE_USER">Utilisateur</b-form-checkbox>
+                                          <b-form-checkbox value="ROLE_ADMIN"> Administrateur </b-form-checkbox>
+                                          <b-form-checkbox value="ROLE_USER"> Utilisateur </b-form-checkbox>
                                         </b-form-checkbox-group>
 
                                     </div>

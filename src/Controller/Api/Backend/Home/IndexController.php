@@ -17,6 +17,6 @@ class IndexController extends AbstractController
      */
     public function __invoke()
     {
-        return $this->render('baseBack.html.twig');
+        return $this->render('backend/home/index.html.twig');
     }
 }

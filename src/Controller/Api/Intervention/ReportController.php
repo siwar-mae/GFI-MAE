@@ -4,9 +4,7 @@ namespace App\Controller\Api\Intervention;
 
 use App\Service\Intervention\ReportService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class ReportController extends AbstractController
 {

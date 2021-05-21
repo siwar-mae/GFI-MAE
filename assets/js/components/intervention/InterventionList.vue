@@ -21,13 +21,13 @@
                 <template #actions="{item, index}">
                   <td class="py-2">
                     <CButton
-                        color="primary"
+                        color="success"
                         variant="outline"
                         square
                         size="sm"
-                        @click="goToReport(item)"
+                        @click="pdf(item)"
                     >
-                      {{Boolean(item._toggled) ? 'Hide' : 'Consulter intervention'}}
+                      {{Boolean(item._toggled) ? 'Hide' : 'Générer PDF'}}
                     </CButton>
                   </td>
                 </template>
@@ -86,7 +86,12 @@ export default {
     },
     goToReport: function (item){
       if (item.id !== undefined) {
-        window.open(this.location = '/report/' + item.id)
+        window.open(this.location = 'api/document/report/' + item.id)
+      }
+    },
+    pdf: function (item){
+      if (item.id !== undefined) {
+        window.open(this.location = '/api/documents/pdf/' + item.id)
       }
     },
   },

@@ -7,12 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/GFI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GFI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/InterventionManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/InterventionManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Backend/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Backend/Home/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseBack.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/intervention/report/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/intervention/report/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,12 +193,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
-      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/link" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
@@ -270,13 +281,10 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/coreui/coreui" />
-      <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/doctrine-messenger" />
-      <path value="$PROJECT_DIR$/vendor/symfony/messenger" />
-      <path value="$PROJECT_DIR$/vendor/symfony/amqp-messenger" />
-      <path value="$PROJECT_DIR$/vendor/symfony/redis-messenger" />
-      <path value="$PROJECT_DIR$/vendor/symfony/sendgrid-mailer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectConfigurationFiles">
@@ -314,7 +322,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Intervention" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/document/pdf/intervention" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\story-feature-0-1\GFI-MAE\node_modules\typescript\lib" />
@@ -322,21 +330,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Service\Intervention" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Intervention" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\intervention\report" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Service\Backend\User" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\document\pdf\intervention" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\document\pdf\common" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\intervention\report\common" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend" />
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\assets\js\components\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Backend\Home" />
       <recent name="C:\wamp64\www\GFI\public\lib\advanced-datatable\css" />
       <recent name="C:\wamp64\www\GFI\assets\js\components\home" />
-      <recent name="C:\wamp64\www\GFI\src\Controller\Api\Home" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -365,6 +373,9 @@
       <workItem from="1621082511323" duration="21151000" />
       <workItem from="1621239204567" duration="23823000" />
       <workItem from="1621324657247" duration="309000" />
+      <workItem from="1621581153102" duration="10501000" />
+      <workItem from="1621593164972" duration="15000" />
+      <workItem from="1621598195032" duration="11677000" />
     </task>
     <servers />
   </component>
@@ -419,7 +430,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

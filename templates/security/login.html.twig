@@ -16,7 +16,6 @@
     {% endblock %}
 </head>
 <body>
-</body>
 {% block body %}
     <div id="login-page">
         <div class="container">
@@ -46,6 +45,7 @@
                 {% endif %}
                 <h2 class="form-login-heading">Veuillez vous connecter</h2>
                 <div class="login-wrap">
+                    <div style="text-align: center"><img alt="avatar centred" src="img/logo-mae.png"></div><br>
                     <label for="inputEmail">Email</label>
                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
                     <br>

@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @media print {
+            @page {
+                size: landscape
+            }
+        }
+
+        .row {
+            padding-top: 10px;
+        }
+
+        body {
+            font-size: 20px !important;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .footer {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            text-align:right;
+        }
+        th, td{
+            padding: 15px;
+            page-break-inside: avoid!important;
+        }
+        tr{
+            page-break-inside: avoid!important;
+        }
+        thead{
+            display: table-header-group;
+        }
+        tfoot{
+            display: table-row-group;
+        }
+        .table-pdf{
+            padding-top: 10px;
+            margin-top: 20px;
+            width: 646px;
+            border-collapse: collapse
+        }
+        #observations {
+            border-collapse: collapse;
+        }
+
+        #observations td, #observations th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #observations tr:nth-child(even){background-color: #f2f2f2;}
+
+        #observations tr:hover {background-color: #ddd;}
+
+        #observations th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .page-break { height:0;page-break-after: always; margin:0; border-top:none;}
+    </style>
+</head>
+<body>
+<center><h4> Fiche d'intervention n° : {{intervention.number}} </h4></center>
+<br><br>
+<div class="row">
+    <div class="column" style="width: 300px; height: 100px; position: absolute;">
+    </div>
+    <div class="column" style="border: 1px solid #73AD21; width: 300px; height: 100px; position: absolute;">
+        <p>Nom et adresse du client : </p>
+    </div>
+</div>
+
+<br>
+<div class="row" style="border: 1px solid #73AD21; width: 646px; height: 200px;">
+        <p> Date d'intervention : {{ intervention.startDate.date |date('d/m/Y h:m') }}</p>
+        <p> Structure : {{ intervention.agency.name }} ({{intervention.agency.code}})</p>
+        <p> Date de départ : </p>
+</div>
+<br>
+<br>
+<table class="table-pdf" id="observations" style="table-layout:fixed;">
+    <tr>
+        <td>Description de l'intervention et observations</td>
+    </tr>
+        <tr>
+            <td>
+                {{ intervention.observation }}
+            </td>
+        </tr>
+</table>
+<br><br><br>
+<p>Signature : </p>
+</body>
+</html>

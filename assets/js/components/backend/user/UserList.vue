@@ -21,7 +21,7 @@
                 <template #actions="{item, index}">
                   <td class="py-2">
                     <CButton
-                        color="primary"
+                        color="success"
                         variant="outline"
                         square
                         size="sm"
