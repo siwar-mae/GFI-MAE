@@ -85,8 +85,9 @@ const messages = {
         required_reference_field: 'Required reference fields !',
         required_designation_field: 'Required designation fields !',
         required_price_field: 'Required price fields !',
-        required_nature_field: 'Required nature fields !'
-
+        required_nature_field: 'Required nature fields !',
+        enter_type: 'Enter type',
+        please_fill_in_type_fields: 'Please fill in type fields !',
     },
     fr: {
         id: 'ID',
@@ -130,6 +131,9 @@ const messages = {
         required_designation_field: 'Champs désignation requis !',
         required_price_field: 'Champs prix requis !',
         required_nature_field: 'Champs nature requis !',
+        enter_type: 'Saisir type',
+        please_fill_in_type_fields: 'Veuillez remplir champs type !',
+
     }
 }
 

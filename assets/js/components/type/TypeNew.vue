@@ -2,7 +2,7 @@
     <div style="margin: 10px">
         <form class="cmxform form-horizontal style-form" id="signupForm">
             <div class="form-group ">
-                <label for="type" class="control-label col-lg-4">Saisir type : </label>
+                <label for="type" class="control-label col-lg-4">{{ $t('enter_type') }} : </label>
                 <div class="col-lg-8">
                     <input class="form-control " id="type" name="type" v-model="type" placeholder="Type"/>
                 </div>
@@ -10,9 +10,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="float-right">
-                        <button class="btn btn-theme" type="button" @click="postAndReturn">Ajouter Et Revenir</button>
-                        <button class="btn btn-theme" type="button" @click="postAndContinue">Ajouter Et Continuer</button>
-                        <button class="btn btn-theme04" type="button" @click="cancel">Annuler</button>
+                        <button class="btn btn-theme" type="button" @click="postAndReturn">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('add_and_return') }}</button>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 axios.post('/api/types/post', {type: self.type}, config)
                     .then(response => {
                             Vue.$toast.open({
-                                message: 'Ajout effectué avec succès!',
+                                message: $t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -62,7 +62,7 @@
                         , (error) => {
                             if(self.type === ''){
                                 Vue.$toast.open({
-                                    message: "Veuillez remplir champs type !",
+                                    message: $t('please_fill_in_type_fields'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -70,7 +70,7 @@
                                 });
                             }else {
                                 Vue.$toast.open({
-                                    message: "Erreur d'ajout!",
+                                    message: $t('add_error'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
