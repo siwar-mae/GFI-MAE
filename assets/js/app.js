@@ -58,9 +58,22 @@ const messages = {
         items_per_pages: 'Items per page:',
         no_filtering_results: 'No filtering results',
         no_items: 'No items',
-        generate_pdf: 'Generate PDF'
-
-
+        generate_pdf: 'Generate PDF',
+        user_management: 'User Management',
+        user_list: 'Users list',
+        email:'Email',
+        role: 'Role(s)',
+        fullName: 'FullName',
+        edit: 'Edit',
+        add_user: 'Add user',
+        admin: 'Admin',
+        user: 'User',
+        add: 'Add',
+        added_successfully: 'Added successfully!',
+        required_email_field: 'Required email fields !',
+        add_error: 'Add Error',
+        required_role_field: 'Required roles fields !',
+        required_fullName_field: 'Required fullName fields !'
     },
     fr: {
         id: 'ID',
@@ -71,12 +84,27 @@ const messages = {
         action: 'Actions',
         intervention_management: 'Gestion des interventions',
         list_of_intervention: 'Liste des interventions',
-        filter_datagrid: '',
+        filter_datagrid: 'Filtrer :',
         type_string: 'Tapez votre recherche...',
         items_per_pages: 'Éléments par page:',
         no_filtering_results: 'Aucun résultat de filtrage',
         no_items: 'Pas de résultats',
-        generate_pdf: 'Générer PDF'
+        generate_pdf: 'Générer PDF',
+        user_management: 'Gestion des utilisateurs',
+        user_list: 'Liste des utilisateurs',
+        email:'E-mail',
+        role: 'Rôle(s)',
+        fullName: 'Nom complet',
+        edit: 'Modifier',
+        add_user: 'Ajouter un utilisateur',
+        admin: 'Administrateur',
+        user: 'Utilisateur',
+        add: 'Ajouter',
+        added_successfully: 'Ajout effectué avec succès!',
+        required_email_field: 'Champs email requis !',
+        add_error: "Erreur d'ajout",
+        required_role_field: 'Champs role requis !',
+        required_fullName_field: 'Champs nom complet requis !'
     }
 }
 

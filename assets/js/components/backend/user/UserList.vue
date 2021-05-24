@@ -1,18 +1,18 @@
 <template>
   <section id="main-content">
     <section class="wrapper">
-      <h3><i class="fa fa-angle-right"></i> Gestion des utilisateurs</h3>
+      <h3><i class="fa fa-angle-right"></i> {{ $t('user_management') }}</h3>
       <div class="row mt">
         <div class="col-lg-12">
-          <h4><i class="fa fa-angle-right"></i> Liste des utilisateurs</h4>
+          <h4><i class="fa fa-angle-right"></i> {{ $t('user_list') }}</h4>
           <div class="content-panel">
             <div class="adv-table" style="padding: 10px">
               <CDataTable
                   :items="items"
                   :fields="fields"
                   column-filter
-                  table-filter
-                  items-per-page-select
+                  :table-filter="tableFilter"
+                  :items-per-page-select="itemsPerPageSelect"
                   :items-per-page="5"
                   hover
                   sorter
@@ -26,7 +26,7 @@
                         square
                         size="sm"
                     >
-                      {{Boolean(item._toggled) ? 'Hide' : 'Edit'}}
+                      {{Boolean(item._toggled) ? 'Hide' : $t('edit')}}
                     </CButton>
                   </td>
                 </template>
@@ -43,28 +43,38 @@
 </template>
 
 <script>
-const fields = [
-  { key: 'id', _style:'min-width:100px' },
-  { key: 'email', _style:'min-width:100px;' },
-  { key: 'roles', _style:'min-width:200px;' },
-  { key: 'fullName', _style:'min-width:200px;' },
-  {
-    key: 'actions',
-    label: 'Actions',
-    _style: 'width:1%',
-    sorter: false,
-    filter: false,
-  }
-];
 export default {
   name: "UserList",
   components: { },
   data() {
     return {
-      fields,
+      fields: [
+        { key: 'id', _style:'min-width:100px', label: this.$t('id') },
+        { key: 'email', _style:'min-width:100px;', label: this.$t('email') },
+        { key: 'roles', _style:'min-width:200px;', label: this.$t('role')},
+        { key: 'fullName', _style:'min-width:200px;', label: this.$t('fullName')},
+        {
+          key: 'actions',
+          label: this.$t('action'),
+          _style: 'width:1%',
+          sorter: false,
+          filter: false,
+        }
+      ],
       details: [],
       collapseDuration: 0,
       items: [],
+      tableFilter: {
+        label: this.$t('filter_datagrid'),
+        placeholder: this.$t('type_string')
+      },
+      itemsPerPageSelect: {
+        label: this.$t('items_per_pages'),
+      },
+      noItemsView: {
+        noResults: this.$t('no_filtering_results'),
+        noItems: this.$t('no_items')
+      },
     }
   },
   methods: {
