@@ -134,7 +134,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/login">Se déconnecter</a></li>
+                    <li><a class="logout" href="/login">{{ 'logout'|trans }}</a></li>
                 </ul>
             </div>
         </header>
@@ -150,11 +150,11 @@
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-cogs"></i>
-                            <span>Gérer interventions</span>
+                            <span>{{ 'intervention_management' | trans}}</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ path('api_intervention_get_post_form') }}" >Ajouter intervention</a></li>
-                            <li><a href="{{ path('api_intervention_get_list') }}">Liste des interventions</a></li>
+                            <li><a href="{{ path('api_intervention_get_post_form') }}" >{{ 'add_intervention' | trans}}</a></li>
+                            <li><a href="{{ path('api_intervention_get_list') }}">{{ 'list_of_intervention' |trans}}</a></li>
                         </ul>
                     </li>
                 </ul>

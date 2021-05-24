@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseBack.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +307,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/translations" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\story-feature-0-1\GFI-MAE\node_modules\typescript\lib" />
@@ -313,11 +315,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\translations" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\assets\js" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\document\pdf\intervention" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\document\pdf\common" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\intervention\report\common" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates" />
@@ -360,7 +362,7 @@
       <workItem from="1621593164972" duration="15000" />
       <workItem from="1621598195032" duration="12246000" />
       <workItem from="1621841671422" duration="9842000" />
-      <workItem from="1621857373459" duration="9774000" />
+      <workItem from="1621857373459" duration="12636000" />
     </task>
     <servers />
   </component>

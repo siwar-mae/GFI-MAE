@@ -101,6 +101,8 @@ const messages = {
         structure: 'Structure',
         configure_observation: 'Configure observation',
         please_choose_an_agency: 'Please choose an agency !',
+        logout: 'Logout',
+        add_intervention: 'Add intervention',
 
     },
     fr: {
@@ -160,6 +162,8 @@ const messages = {
         structure: 'Structure',
         configure_observation: 'Configurer observation',
         please_choose_an_agency: 'Veuillez choisir une agence !',
+        logout: 'Se déconnecter',
+        add_intervention: 'Ajouter intervention',
     }
 }
 
