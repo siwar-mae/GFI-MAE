@@ -6,7 +6,14 @@
     <bookmark url="file://$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" description="                const axios = require('axios');&#10;  ..." line="53" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="" />
+    <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/equipement/EquipementNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/equipement/EquipementNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionConfig.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionConfig.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/type/TypeNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/type/TypeNew.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -357,7 +364,7 @@
       <workItem from="1621593164972" duration="15000" />
       <workItem from="1621598195032" duration="12246000" />
       <workItem from="1621841671422" duration="9842000" />
-      <workItem from="1621857373459" duration="6683000" />
+      <workItem from="1621857373459" duration="9287000" />
     </task>
     <servers />
   </component>

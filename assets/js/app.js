@@ -88,6 +88,16 @@ const messages = {
         required_nature_field: 'Required nature fields !',
         enter_type: 'Enter type',
         please_fill_in_type_fields: 'Please fill in type fields !',
+        add_type_of_intervention: "Add type of intervention",
+        add_equipment: 'Add Equipment',
+        type_of_intervention: 'Type of intervention',
+        equipement: 'Equipment',
+        please_choose_equipment: 'Please choose equipment',
+        intervention_and_observation: 'Interventions and observations',
+        required_equipment_field: 'Required equipment field',
+        required_observation_field: 'Required observation field'
+
+
     },
     fr: {
         id: 'ID',
@@ -133,7 +143,14 @@ const messages = {
         required_nature_field: 'Champs nature requis !',
         enter_type: 'Saisir type',
         please_fill_in_type_fields: 'Veuillez remplir champs type !',
-
+        add_type_of_intervention: "Ajouter type d'intervention",
+        add_equipment: 'Ajouter équipement',
+        type_of_intervention: "Type d'intervention",
+        equipement: 'Equipement',
+        please_choose_equipment: 'Veuillez choisir un équipement',
+        intervention_and_observation: 'Interventions et observations',
+        required_equipment_field: 'Veuillez remplir champs équipement !',
+        required_observation_field: 'Veuillez remplir champs observations !'
     }
 }
 

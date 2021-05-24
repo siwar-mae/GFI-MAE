@@ -11,8 +11,8 @@
                 <div class="col-lg-12">
                     <div class="float-right">
                         <button class="btn btn-theme" type="button" @click="postAndReturn">{{ $t('add_and_return') }}</button>
-                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_return') }}</button>
-                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_create') }}</button>
+                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('cancel') }}</button>
                     </div>
                 </div>
             </div>

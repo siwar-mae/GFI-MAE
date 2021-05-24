@@ -1,17 +1,17 @@
 <template>
     <div style="margin: 10px">
-        <Modal v-model="showModalType" title="Ajouter type d'intervention" size="xl">
+        <Modal v-model="showModalType" :title=this.title1 size="xl">
             <TypeNew></TypeNew>
         </Modal>
-        <Modal v-model="showModalEquipement" title="Ajouter équipement" size="xl">
+        <Modal v-model="showModalEquipement" :title=this.title2 size="xl">
             <EquipementNew></EquipementNew>
         </Modal>
         <form class="cmxform form-horizontal style-form" id="signupForm">
             <div class="form-group ">
-                <label for="type" class="control-label col-lg-4">Type intervention</label>
+                <label for="type" class="control-label col-lg-4">{{ $t('type_of_intervention') }}</label>
                 <div class="col-lg-6">
                     <select class="form-control " id="type" name="type" v-model="type">
-                        <option value="" disabled>Veuillez choisir un type</option>
+                        <option value="" disabled>{{ $t('please_choose_an_option') }}</option>
                         <option v-for="type in types">{{type.value}}</option>
                     </select>
                 </div>
@@ -22,10 +22,10 @@
                  </div>
             </div>
             <div class="form-group ">
-                <label for="equipement" class="control-label col-lg-4">Equipement</label>
+                <label for="equipement" class="control-label col-lg-4">{{ $t('equipement') }}</label>
                 <div class="col-lg-6">
                     <select class="form-control " id="equipement" name="equipement" v-model="equipement">
-                        <option value="" disabled>Veuillez choisir un équipement</option>
+                        <option value="" disabled>{{ $t('please_choose_equipment') }}</option>
                         <option v-for="equipement in equipements">{{equipement.value}}</option>
                     </select>
                 </div>
@@ -36,17 +36,17 @@
                 </div>
             </div>
             <div class="form-group ">
-                <label for="observation" class="control-label col-lg-4">Interventions et observations</label>
+                <label for="observation" class="control-label col-lg-4">{{ $t('intervention_and_observation') }}</label>
                 <div class="col-lg-8">
-                    <input class="form-control " id="observation" name="observation" v-model="model.observation" placeholder="Interventions et observations"/>
+                    <input class="form-control " id="observation" name="observation" v-model="model.observation"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="float-right">
-                        <button class="btn btn-theme" type="button" @click="postAndReturn">Ajouter Et Revenir</button>
-                        <button class="btn btn-theme" type="button" @click="postAndContinue">Ajouter et Continuer</button>
-                        <button class="btn btn-theme04" type="button" @click="close">Annuler</button>
+                        <button class="btn btn-theme" type="button" @click="postAndReturn">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_create') }}</button>
+                        <button class="btn btn-theme04" type="button" @click="close">{{ $t('cancel') }}</button>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,9 @@
                 type: '',
                 equipement: '',
                 showModalType: false,
-                showModalEquipement: false
+                showModalEquipement: false,
+                title1: this.$t('add_type_of_intervention'),
+                title2: this.$t('add_equipment')
             }
         },
         props: {
@@ -140,7 +142,7 @@
             post: function () {
                 if(this.type === ''){
                     Vue.$toast.open({
-                        message: "Veuillez remplir champs type !",
+                        message: this.$t('please_fill_in_type_fields'),
                         type: 'error',
                         position: 'top-right',
                         autohide: 3000 ,
@@ -148,7 +150,7 @@
                     });
                 }else if(this.equipement === ''){
                     Vue.$toast.open({
-                        message: "Veuillez remplir champs équipement !",
+                        message: this.$t('required_equipment_field'),
                         type: 'error',
                         position: 'top-right',
                         autohide: 3000 ,
@@ -156,7 +158,7 @@
                     });
                 }else if(this.observation === ''){
                     Vue.$toast.open({
-                        message: "Veuillez remplir champs observation !",
+                        message: this.$t('required_observation_field'),
                         type: 'error',
                         position: 'top-right',
                         autohide: 3000 ,

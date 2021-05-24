@@ -41,8 +41,8 @@
                 <div class="col-lg-12">
                     <div class="float-right">
                         <button class="btn btn-theme" type="button" @click="postAndReturn">{{ $t('add_and_return') }}</button>
-                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_return') }}</button>
-                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_create') }}</button>
+                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('cancel') }}</button>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@ export default {
                 axios.post('/api/equipements/post', self.model, config)
                     .then(response => {
                             Vue.$toast.open({
-                              message: $t('added_successfully'),
+                              message: this.$t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -116,7 +116,7 @@ export default {
                         , (error) => {
                             if(self.model.ref === ''){
                                 Vue.$toast.open({
-                                    message: $t('required_reference_field'),
+                                    message: this.$t('required_reference_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -124,7 +124,7 @@ export default {
                                 });
                             }else if(self.model.designation === ''){
                                 Vue.$toast.open({
-                                    message: $t('required_designation_field'),
+                                    message: this.$t('required_designation_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -132,7 +132,7 @@ export default {
                                 });
                             }else if(self.model.price === 0){
                                 Vue.$toast.open({
-                                    message: $t('required_price_field'),
+                                    message: this.$t('required_price_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -141,7 +141,7 @@ export default {
                             }
                             else if(self.model.nature === ''){
                                 Vue.$toast.open({
-                                    message: $t("required_nature_field"),
+                                    message: this.$t("required_nature_field"),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -149,7 +149,7 @@ export default {
                                 });
                             }else {
                                 Vue.$toast.open({
-                                  message: $t('add_error'),
+                                  message: this.$t('add_error'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,

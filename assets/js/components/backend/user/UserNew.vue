@@ -73,7 +73,7 @@
                 axios.post('/api/users/post', self.model, config)
                     .then(response => {
                             Vue.$toast.open({
-                                message: $t('added_successfully'),
+                                message: this.$t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -86,7 +86,7 @@
                         , (error) => {
                             if(this.model.email === ''){
                                 Vue.$toast.open({
-                                    message: $t('required_email_field'),
+                                    message: this.$t('required_email_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -94,7 +94,7 @@
                                 });
                             }else if(this.model.roles === '') {
                               Vue.$toast.open({
-                                message: $t('required_role_field'),
+                                message: this.$t('required_role_field'),
                                 type: 'error',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -102,7 +102,7 @@
                               })
                             }else if(this.model.fullName === '') {
                               Vue.$toast.open({
-                                message: $t('required_fullName_field'),
+                                message: this.$t('required_fullName_field'),
                                 type: 'error',
                                 position: 'top-right',
                                 autohide: 3000 ,
