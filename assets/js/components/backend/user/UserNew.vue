@@ -73,7 +73,7 @@
                 axios.post('/api/users/post', self.model, config)
                     .then(response => {
                             Vue.$toast.open({
-                                message: 'Ajout effectué avec succès!',
+                                message: $t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -110,7 +110,7 @@
                               })
                             }else {
                                 Vue.$toast.open({
-                                    message: $t('add_error'),
+
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,

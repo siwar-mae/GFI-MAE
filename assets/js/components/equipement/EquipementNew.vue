@@ -2,23 +2,22 @@
     <div style="margin: 10px">
         <form class="cmxform form-horizontal style-form" id="signupForm">
             <div class="form-group ">
-                <label for="ref" class="control-label col-lg-4">Saisir Référence : </label>
+                <label for="ref" class="control-label col-lg-4">{{ $t('reference') }} : </label>
                 <div class="col-lg-8">
-                    <input class="form-control " id="ref" name="type" v-model="model.ref" placeholder="Référence"/>
+                    <input class="form-control " id="ref" name="type" v-model="model.ref"/>
                 </div>
             </div>
             <div class="form-group ">
-                <label for="designation" class="control-label col-lg-4">Saisir désignation : </label>
+                <label for="designation" class="control-label col-lg-4">{{ $t('designation') }} : </label>
                 <div class="col-lg-8">
                     <input class="form-control "
                            id="designation"
                            name="designation"
-                           v-model="model.designation"
-                           placeholder="Désignation"/>
+                           v-model="model.designation"/>
                 </div>
             </div>
             <div class="form-group ">
-                <label class="control-label col-lg-4">Saisir prix : </label>
+                <label class="control-label col-lg-4">{{ $t('price') }} : </label>
                 <div class="col-lg-8">
                   <currency-input
                       class="form-control"
@@ -29,10 +28,10 @@
                 </div>
             </div>
             <div class="form-group ">
-                <label for="nature" class="control-label col-lg-4">Saisir nature : </label>
+                <label for="nature" class="control-label col-lg-4">{{ $t('nature') }} : </label>
                 <div class="col-lg-8">
                     <select class="form-control " id="nature" name="type" v-model="model.nature">
-                        <option value="" disabled>Veuillez choisir une option</option>
+                        <option value="" disabled>{{ $t('please_choose_an_option') }}</option>
                         <option value="software">Software</option>
                         <option value="hardware">Hardware</option>
                     </select>
@@ -41,9 +40,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="float-right">
-                        <button class="btn btn-theme" type="button" @click="postAndReturn">Ajouter Et Revenir</button>
-                        <button class="btn btn-theme" type="button" @click="postAndContinue">Ajouter Et Continuer</button>
-                        <button class="btn btn-theme04" type="button" @click="cancel">Annuler</button>
+                        <button class="btn btn-theme" type="button" @click="postAndReturn">{{ $t('add_and_return') }}</button>
+                        <button class="btn btn-theme" type="button" @click="postAndContinue">{{ $t('add_and_create') }}</button>
+                        <button class="btn btn-theme04" type="button" @click="cancel">{{ $t('cancel') }}</button>
                     </div>
                 </div>
             </div>
@@ -107,7 +106,7 @@ export default {
                 axios.post('/api/equipements/post', self.model, config)
                     .then(response => {
                             Vue.$toast.open({
-                                message: 'Ajout effectué avec succès!',
+                              message: $t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -117,7 +116,7 @@ export default {
                         , (error) => {
                             if(self.model.ref === ''){
                                 Vue.$toast.open({
-                                    message: "Veuillez remplir champs référence !",
+                                    message: $t('required_reference_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -125,7 +124,7 @@ export default {
                                 });
                             }else if(self.model.designation === ''){
                                 Vue.$toast.open({
-                                    message: "Veuillez remplir champs désignation !",
+                                    message: $t('required_designation_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -133,7 +132,7 @@ export default {
                                 });
                             }else if(self.model.price === 0){
                                 Vue.$toast.open({
-                                    message: "Veuillez remplir champs prix !",
+                                    message: $t('required_price_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -142,7 +141,7 @@ export default {
                             }
                             else if(self.model.nature === ''){
                                 Vue.$toast.open({
-                                    message: "Veuillez choisir la nature de l'équipement !",
+                                    message: $t("required_nature_field"),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -150,7 +149,7 @@ export default {
                                 });
                             }else {
                                 Vue.$toast.open({
-                                    message: "Erreur d'ajout!",
+                                  message: $t('add_error'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,

@@ -73,7 +73,20 @@ const messages = {
         required_email_field: 'Required email fields !',
         add_error: 'Add Error',
         required_role_field: 'Required roles fields !',
-        required_fullName_field: 'Required fullName fields !'
+        required_fullName_field: 'Required fullName fields !',
+        reference: 'Reference',
+        designation: 'Designation',
+        prix: 'Price',
+        nature: 'Nature',
+        please_choose_an_option: 'Please choose an option',
+        add_and_return: 'Add and return',
+        add_and_create: 'Add and create',
+        cancel: "Cancel",
+        required_reference_field: 'Required reference fields !',
+        required_designation_field: 'Required designation fields !',
+        required_price_field: 'Required price fields !',
+        required_nature_field: 'Required nature fields !'
+
     },
     fr: {
         id: 'ID',
@@ -104,7 +117,19 @@ const messages = {
         required_email_field: 'Champs email requis !',
         add_error: "Erreur d'ajout",
         required_role_field: 'Champs role requis !',
-        required_fullName_field: 'Champs nom complet requis !'
+        required_fullName_field: 'Champs nom complet requis !',
+        reference: 'Référence',
+        designation: 'Désignation',
+        price: 'Prix',
+        nature: 'Nature',
+        please_choose_an_option: 'Veuillez choisir une option',
+        add_and_return: 'Ajouter et revenir',
+        add_and_create: 'Ajouter et en créer',
+        cancel: "Annuler",
+        required_reference_field: 'Champs référence requis !',
+        required_designation_field: 'Champs désignation requis !',
+        required_price_field: 'Champs prix requis !',
+        required_nature_field: 'Champs nature requis !',
     }
 }
 
