@@ -95,8 +95,12 @@ const messages = {
         please_choose_equipment: 'Please choose equipment',
         intervention_and_observation: 'Interventions and observations',
         required_equipment_field: 'Required equipment field',
-        required_observation_field: 'Required observation field'
-
+        required_observation_field: 'Required observation field',
+        configure_intervention: 'Configure intervention',
+        add_an_intervention: 'Add an intervention',
+        structure: 'Structure',
+        configure_observation: 'Configure observation',
+        please_choose_an_agency: 'Please choose an agency !',
 
     },
     fr: {
@@ -150,7 +154,12 @@ const messages = {
         please_choose_equipment: 'Veuillez choisir un équipement',
         intervention_and_observation: 'Interventions et observations',
         required_equipment_field: 'Veuillez remplir champs équipement !',
-        required_observation_field: 'Veuillez remplir champs observations !'
+        required_observation_field: 'Veuillez remplir champs observations !',
+        configure_intervention: 'Configurer intervention',
+        add_an_intervention: 'Ajouter une intervention',
+        structure: 'Structure',
+        configure_observation: 'Configurer observation',
+        please_choose_an_agency: 'Veuillez choisir une agence !',
     }
 }
 

@@ -2,46 +2,46 @@
     <!-- Your HTML tags-->
     <section id="main-content">
         <section class="wrapper">
-            <Modal v-model="showModalConfig" title="Configurer intervention" size="xl">
+            <Modal v-model="showModalConfig" :title=title size="xl">
                 <InterventionConfig :agency.sync="this.model.structure"></InterventionConfig>
             </Modal>
-            <h3><i class="fa fa-angle-right"></i> Gestion des interventions</h3>
+            <h3><i class="fa fa-angle-right"></i> {{ $t('intervention_management') }}</h3>
             <div class="row mt">
                 <div class="col-lg-12">
-                    <h4><i class="fa fa-angle-right"></i> Ajouter une intervention</h4>
+                    <h4><i class="fa fa-angle-right"></i> {{ $t('add_an_intervention') }}</h4>
                     <div class="form-panel">
                         <div class="form">
                             <form class="cmxform form-horizontal style-form" id="signupForm" @submit.prevent="post">
                                 <div class="form-group ">
-                                    <label for="number" class="control-label col-lg-2">Numéro intervention</label>
+                                    <label for="number" class="control-label col-lg-2">{{ $t('number') }}</label>
 
                                     <div class="col-lg-10">
                                         <input class=" form-control" id="number" name="number" type="text" readonly v-model="model.number"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="startDate" class="control-label col-lg-2">Date début</label>
+                                    <label for="startDate" class="control-label col-lg-2">{{ $t('startDate') }}</label>
                                     <div class="col-lg-10">
                                         <input class=" form-control" id="startDate" name="startDate" readonly v-model="model.startDate"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="structure" class="control-label col-lg-2">Structure</label>
+                                    <label for="structure" class="control-label col-lg-2">{{ $t('structure') }}</label>
                                     <div class="col-lg-10">
                                         <select class="form-control"
                                                 id="structure"
                                                 name="structure"
                                                 v-model="model.structure"
                                         >
-                                            <option value="" disabled>Veuillez choisir une agence</option>
+                                            <option value="" disabled>{{ $t('please_choose_an_option') }}</option>
                                             <option v-for="agency in agencies">{{agency.value}}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="observation" class="control-label col-lg-2">Interventions et observations</label>
+                                    <label for="observation" class="control-label col-lg-2">{{ $t('intervention_and_observation') }}</label>
                                     <div class="col-lg-6">
-                                        <textarea placeholder="Ajoutez plusieurs lignes"
+                                        <textarea
                                                   class="form-control "
                                                   id="observation"
                                                   name="observation"
@@ -50,12 +50,12 @@
                                         </textarea>
                                     </div>
                                     <div class="col-lg-2">
-                                        <button class="btn btn-theme" type="button" @click="openModalConfig">Paramétrer observation</button>
+                                        <button class="btn btn-theme" type="button" @click="openModalConfig">{{ $t('configure_observation') }}</button>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-theme" type="submit">Ajouter</button>
+                                        <button class="btn btn-theme" type="submit">{{ $t('add') }}</button>
                                     </div>
                                 </div>
                             </form>
@@ -96,7 +96,7 @@
                 axios.post('/api/interventions/post', self.model, config)
                     .then(response => {
                             Vue.$toast.open({
-                                message: 'Ajout effectué avec succès!',
+                                message: this.$t('added_successfully'),
                                 type: 'success',
                                 position: 'top-right',
                                 autohide: 3000 ,
@@ -109,7 +109,7 @@
                         , (error) => {
                             if(this.model.observation === ''){
                                 Vue.$toast.open({
-                                    message: "Veuillez remplir champs observation !",
+                                    message: this.$t('required_observation_field'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -117,7 +117,7 @@
                                 });
                             }else {
                                 Vue.$toast.open({
-                                    message: "Erreur d'ajout!",
+                                    message: this.$t('add_error'),
                                     type: 'error',
                                     position: 'top-right',
                                     autohide: 3000 ,
@@ -161,7 +161,7 @@
                 if(this.model.structure === ''){
                     this.showModalConfig = false;
                     Vue.$toast.open({
-                        message: "Veuillez choisir une agence !",
+                        message: this.$t('please_choose_an_agency'),
                         type: 'error',
                         position: 'top-right',
                         autohide: 3000 ,
@@ -198,7 +198,8 @@
                 agencies: [],
                 simpleDialog: false,
                 observation: '',
-                inputHeight: '0'
+                inputHeight: '0',
+                title: this.$t('configure_intervention')
             }
         },
         watch: {
