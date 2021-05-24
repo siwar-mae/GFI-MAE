@@ -35,19 +35,61 @@ import UserList from './components/backend/user/UserList';
 import UserNew from './components/backend/user/UserNew';
 import IndexBackend from './components/backend/home/IndexBackend';
 import InterventionReport from './components/intervention/InterventionReport';
-
-
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n);
 
 Vue.filter('formatDate', function(value) {
     if (value) {
         return moment(String(value)).format('DD-MM-YYYY hh:mm')
     }
 });
+const messages = {
+    en: {
+        id: 'ID',
+        number: 'Number',
+        start_date: 'Start date',
+        agency: 'Agency',
+        observation: 'Observation',
+        action: 'Actions',
+        intervention_management: 'Intervention management',
+        list_of_intervention: 'List of intervention',
+        filter_datagrid: 'Filter :',
+        type_string: 'Type your search ...',
+        items_per_pages: 'Items per page:',
+        no_filtering_results: 'No filtering results',
+        no_items: 'No items',
+        generate_pdf: 'Generate PDF'
+
+
+    },
+    fr: {
+        id: 'ID',
+        number: 'Numéro',
+        start_date: 'Date de début',
+        agency: 'Agence',
+        observation: 'Observation',
+        action: 'Actions',
+        intervention_management: 'Gestion des interventions',
+        list_of_intervention: 'Liste des interventions',
+        filter_datagrid: '',
+        type_string: 'Tapez votre recherche...',
+        items_per_pages: 'Éléments par page:',
+        no_filtering_results: 'Aucun résultat de filtrage',
+        no_items: 'Pas de résultats',
+        generate_pdf: 'Générer PDF'
+    }
+}
+
+const i18n = new VueI18n({
+    locale: 'en',
+    messages
+})
 const router = new VueRouter({
     mode: 'history',
     routes
 });
 new Vue({
     el: '#app',
+    i18n,
     components: {InterventionNew, InterventionList, Index, UserList, UserNew, InterventionReport, IndexBackend}
 });
