@@ -5,7 +5,15 @@ add_intervention: 'Ajouter intervention'
 user_management: 'Gestion des utilisateurs'
 add_user: 'Ajouter un utilisateur'
 user_list: 'Liste des utilisateurs'
-
+please_log_in: 'Veuillez vous connecter'
+log_in: 'SE CONNECTER'
+email: 'E-mail'
+password: 'Mot de passe'
+remember_me: 'Se souvenir de moi'
+forgot_your_password: 'Mot de passe oublié ?'
+cancel: 'Annuler'
+submit: 'Submit'
+enter_your_e-mail_address: 'Entrez votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.'
 
 
 

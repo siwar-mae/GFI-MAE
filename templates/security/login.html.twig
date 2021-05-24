@@ -26,15 +26,15 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Forgot Password ?</h4>
+                                <h4 class="modal-title">{{ 'forgot_your_password'|trans }}</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Enter your e-mail address below to reset your password.</p>
-                                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                                <p>{{ 'enter_your_e-mail_address'|trans }}</p>
+                                <input type="text" name="email" autocomplete="off" class="form-control placeholder-no-fix">
                             </div>
                             <div class="modal-footer">
-                                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                                <button class="btn btn-theme" type="submit">Submit</button>
+                                <button data-dismiss="modal" class="btn btn-default" type="button">{{ 'cancel'|trans }}</button>
+                                <button class="btn btn-theme" type="submit">{{ 'submit'|trans }}</button>
                             </div>
                         </div>
                     </div>
@@ -43,14 +43,14 @@
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
-                <h2 class="form-login-heading">Veuillez vous connecter</h2>
+                <h2 class="form-login-heading">{{ 'please_log_in'|trans }}</h2>
                 <div class="login-wrap">
                     <div style="text-align: center"><img alt="avatar centred" src="img/logo-mae.png"></div><br>
-                    <label for="inputEmail">Email</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                    <label for="inputEmail">{{ 'email'| trans }}</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
                     <br>
-                    <label for="inputPassword">Mot de passe</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                    <label for="inputPassword">{{ 'password'| trans }}</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required>
 
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
@@ -61,13 +61,13 @@
 
                     <div class="checkbox mb-3">
                         <label>
-                            <input type="checkbox" id="remember_me" name="_remember_me"> Se souvenir de moi
+                            <input type="checkbox" id="remember_me" name="_remember_me"> {{ 'remember_me'| trans }}
                         </label>
                         <span class="pull-right">
-                                <a data-toggle="modal" href="login.html#myModal"> Mot de passe oublié?</a>
+                                <a data-toggle="modal" href="login.html#myModal"> {{ 'forgot_your_password'| trans }}</a>
                         </span>
                     </div>
-                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SE CONNECTER</button>
+                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> {{ 'log_in'|trans }}</button>
                 </div>
             </form>
         </div>
