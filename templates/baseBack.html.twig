@@ -89,7 +89,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="{{ app.user.thumbnail.link }}"></span>
                                     <span class="subject">
                           <span class="from">Divya Manian</span>
                           <span class="time">40 mins.</span>
@@ -142,7 +142,7 @@
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered"><a href="profile.html"><img src="img/avatar.png" class="img-circle" width="80"></a></p>
+                    <p class="centered"><a href="profile.html"><img src="{{ app.user.thumbnail.link }}" class="img-circle" width="80"></a></p>
                     <h5 class="centered">{{ app.user.fullName }}</h5>
                     <li class="mt">
 

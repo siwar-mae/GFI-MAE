@@ -73,6 +73,56 @@ class User implements UserInterface
     }
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $address;
+
+    /**
+     * One User has One Thumbnail.
+     *
+     * @ORM\OneToOne(targetEntity="Thumbnail", inversedBy="user", cascade={"persist"})
+     * @ORM\JoinColumn(name="thumbnail_id", referencedColumnName="id", nullable=true)
+     */
+    private $thumbnail;
+    /**
+     * Set thumbnail.
+     *
+     * @return User
+     */
+    public function setThumbnail(\App\Entity\Thumbnail $thumbnail = null)
+    {
+        $this->thumbnail = $thumbnail;
+
+        return $this;
+    }
+
+    /**
+     * Get thumbnail.
+     *
+     * @return \App\Entity\Thumbnail|null
+     */
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address): void
+    {
+        $this->address = $address;
+    }
+
+    /**
      * A visual identifier that represents this user.
      *
      * @see UserInterface
