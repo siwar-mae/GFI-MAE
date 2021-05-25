@@ -14,7 +14,13 @@ forgot_your_password: 'Mot de passe oublié ?'
 cancel: 'Annuler'
 submit: 'Submit'
 enter_your_e-mail_address: 'Entrez votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.'
-
+intervention_number: "Fiche d'intervention n°"
+name_and_address_of_client: 'Nom et adresse du client'
+date_intervention: "Date d'intervention"
+structure: 'Structure'
+date_of_departure: 'Date de départ'
+description_and_observation: "Description de l'intervention et observations"
+signature: 'Signature'
 
 
 

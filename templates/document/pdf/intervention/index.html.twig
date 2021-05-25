@@ -81,35 +81,35 @@
     </style>
 </head>
 <body>
-<center><h4> Fiche d'intervention n° : {{intervention.number}} </h4></center>
+<center><h4> {{ 'intervention_number'|trans() }} : {{intervention.number}} </h4></center>
 <br><br>
 <div class="row">
     <div class="column" style="width: 300px; height: 100px; position: absolute;">
     </div>
     <div class="column" style="border: 1px solid #73AD21; width: 300px; height: 100px; position: absolute;">
-        <p>Nom et adresse du client : </p>
+        <p>{{ 'name_and_address_of_client'|trans() }} : </p>
     </div>
 </div>
 
 <br>
 <div class="row" style="border: 1px solid #73AD21; width: 646px; height: 200px;">
-        <p> Date d'intervention : {{ intervention.startDate.date |date('d/m/Y h:m') }}</p>
-        <p> Structure : {{ intervention.agency.name }} ({{intervention.agency.code}})</p>
-        <p> Date de départ : </p>
+        <p> {{ 'date_intervention'|trans() }} : {{ intervention.startDate.date |date('d/m/Y h:m') }}</p>
+        <p> {{ 'structure'|trans() }} : {{ intervention.agency.name }} ({{intervention.agency.code}})</p>
+        <p> {{ 'date_of_departure'|trans() }} : </p>
 </div>
 <br>
 <br>
 <table class="table-pdf" id="observations" style="table-layout:fixed;">
     <tr>
-        <td>Description de l'intervention et observations</td>
+        <td>{{ 'description_and_observation'|trans() }} </td>
     </tr>
-        <tr>
+    <tr>
             <td>
                 {{ intervention.observation }}
             </td>
         </tr>
 </table>
 <br><br><br>
-<p>Signature : </p>
+<p>{{ 'signature'|trans() }} : </p>
 </body>
 </html>

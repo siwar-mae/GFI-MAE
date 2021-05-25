@@ -14,3 +14,10 @@ forgot_your_password: 'Forgot your password ?'
 cancel: 'Cancel'
 submit: 'Submit'
 enter_your_e-mail_address: 'Enter your e-mail address below to reset your password.'
+intervention_number: "Intervention sheet n °"
+name_and_address_of_client: 'Name and address of client'
+date_intervention: 'Intervention date'
+structure: 'Structure'
+date_of_departure: 'Date of departure'
+description_and_observation: "Description of the intervention and observations"
+signature: 'Signature'
