@@ -3343,11 +3343,11 @@ ul.chat-available-user li a:hover {
     height: 2.5rem;            /* Footer height */
 }
 #main-footer {
-    width: 100%;
+    width: 89%;
     padding: 1rem;
     background: #006400;
-    border-top: 1px solid #dee2e6;
     position:fixed;
+    right: 0;
     bottom:0;
 }
 
