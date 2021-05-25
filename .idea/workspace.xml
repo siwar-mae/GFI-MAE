@@ -8,10 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/document/pdf/common/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/document/pdf/common/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/document/pdf/intervention/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/document/pdf/intervention/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +364,7 @@
       <workItem from="1621598195032" duration="12246000" />
       <workItem from="1621841671422" duration="9842000" />
       <workItem from="1621857373459" duration="13961000" />
-      <workItem from="1621927244882" duration="709000" />
+      <workItem from="1621927244882" duration="4067000" />
     </task>
     <servers />
   </component>

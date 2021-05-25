@@ -4,7 +4,7 @@
       <h3><i class="fa fa-angle-right"></i> {{ $t('intervention_management') }}</h3>
       <div class="row mt">
         <div class="col-lg-12">
-          <h4><i class="fa fa-angle-right"></i>{{ $t('list_of_intervention') }}</h4>
+          <h4><i class="fa fa-angle-right"></i> {{ $t('list_of_intervention') }} </h4>
           <div class="content-panel">
             <div class="adv-table" style="padding: 10px">
               <CDataTable
