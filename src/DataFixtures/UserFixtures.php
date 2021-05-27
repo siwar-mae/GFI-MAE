@@ -25,8 +25,7 @@ class UserFixtures extends Fixture
         $user->setFullName('Flen Ben Foulen');
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
         $user->setAddress('Ariana');
-        $thumbnail1 = new Thumbnail();
-        $thumbnail1->setLink('img/ui-divya.jpg');
+        $thumbnail1 = $manager->getRepository(Thumbnail::class)->findBy(['link' => 'img/ui-divya.jpg'])[0];
         $user->setThumbnail($thumbnail1);
         $manager->persist($user);
         $user2 = new User();
@@ -35,8 +34,7 @@ class UserFixtures extends Fixture
         $user2->setFullName('Siwar Bousselmi');
         $user2->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
         $user2->setAddress('Tunis');
-        $thumbnail2 = new Thumbnail();
-        $thumbnail2->setLink('img/avatar.png');
+        $thumbnail2 = $manager->getRepository(Thumbnail::class)->findBy(['link' => 'img/avatar.png'])[0];
         $user2->setThumbnail($thumbnail2);
         $manager->persist($user2);
         $manager->flush();

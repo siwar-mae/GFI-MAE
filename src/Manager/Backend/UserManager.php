@@ -2,7 +2,9 @@
 
 namespace App\Manager\Backend;
 
+use App\Entity\Thumbnail;
 use App\Entity\User;
+use App\Repository\ThumbnailRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
@@ -15,6 +17,10 @@ class UserManager
      */
     protected $repository;
     /**
+     * @var ThumbnailRepository|ObjectRepository
+     */
+    protected $thumbnailRepository;
+    /**
      * @var Security
      */
     protected $security;
@@ -23,6 +29,7 @@ class UserManager
         EntityManagerInterface $entityManager, Security $security)
     {
         $this->repository = $entityManager->getRepository(User::class);
+        $this->thumbnailRepository = $entityManager->getRepository(Thumbnail::class);
         $this->security = $security;
         $this->entityManager = $entityManager;
     }
@@ -46,6 +53,22 @@ class UserManager
         $user->setEmail($arrayUser['email']);
         $user->setRoles($arrayUser['roles']);
         $user->setPassword('test');
+        $user->setAddress($arrayUser['address']);
+        $user->setThumbnail($arrayUser['thumbnail']);
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        return true;
+    }
+
+    public function put($arrayUser){
+        $user = $this->repository->find($arrayUser['id']);
+        $user->setAddress($arrayUser['address']);
+        $user->setEmail($arrayUser['email']);
+        $user->setFullName($arrayUser['fullName']);
+        $user->setRoles([$arrayUser['role']]);
+        $thumbnail = $this->thumbnailRepository->findBy(['link' => 'img/'.$arrayUser['thumb']]);
+        $user->setThumbnail($thumbnail[0]);
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 

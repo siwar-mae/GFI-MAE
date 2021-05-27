@@ -25,6 +25,7 @@
                         variant="outline"
                         square
                         size="sm"
+                        @click="goToEditPage(item.id)"
                     >
                       {{Boolean(item._toggled) ? 'Hide' : $t('edit')}}
                     </CButton>
@@ -43,9 +44,24 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Router from 'vue-router';
+import VueRouter from "vue-router";
+import UserEdit from './UserEdit';
+
+Vue.use(Router);
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/putUser',
+      name: 'api_user_get_put_form',
+      component: UserEdit
+    }
+  ]
+});
 export default {
   name: "UserList",
-  components: { },
+  components: {UserEdit },
   data() {
     return {
       fields: [
@@ -53,6 +69,8 @@ export default {
         { key: 'email', _style:'min-width:100px;', label: this.$t('email') },
         { key: 'roles', _style:'min-width:200px;', label: this.$t('role')},
         { key: 'fullName', _style:'min-width:200px;', label: this.$t('fullName')},
+        { key: 'address', _style:'min-width:200px;', label: this.$t('address')},
+        { key: 'link', _style:'min-width:200px;', label: this.$t('avatar')},
         {
           key: 'actions',
           label: this.$t('action'),
@@ -87,8 +105,14 @@ export default {
             // handle success
             self.items = response.data;
             self.items.map((item) => {
+              item.link = item.thumbnail.link
               return {...item}})
           });
+    },
+    goToEditPage: function (id){
+      if (id !== undefined) {
+        window.location.replace("/putUser/"+ id);
+      }
     },
   },
   mounted() {

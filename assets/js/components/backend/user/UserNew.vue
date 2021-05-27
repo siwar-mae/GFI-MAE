@@ -128,6 +128,8 @@
                 model: {
                     email: '',
                     fullName: '',
+                    address: '',
+                    thumbnail: '',
                     roles: [],
                 },
             }

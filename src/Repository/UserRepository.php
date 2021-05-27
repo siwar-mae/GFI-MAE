@@ -68,8 +68,9 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     {
         $qb = $this->getEntityManager()
             ->createQueryBuilder()
-            ->select('u')
-            ->from(User::class, 'u');
+            ->select('u, thumbnail')
+            ->from(User::class, 'u')
+            ->join('u.thumbnail', 'thumbnail');
 
         return $qb->getQuery()->getArrayResult();
     }

@@ -39,7 +39,8 @@ import UserEdit from './components/backend/user/UserEdit';
 
 import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
-
+import Router from 'vue-router';
+Vue.use(Router);
 Vue.filter('formatDate', function(value) {
     if (value) {
         return moment(String(value)).format('DD-MM-YYYY hh:mm')
@@ -64,7 +65,7 @@ const messages = {
         user_management: 'User Management',
         user_list: 'Users list',
         email:'Email',
-        role: 'Role(s)',
+        role: 'Role',
         fullName: 'FullName',
         edit: 'Edit',
         add_user: 'Add user',
@@ -105,7 +106,8 @@ const messages = {
         please_choose_an_agency: 'Please choose an agency !',
         logout: 'Logout',
         add_intervention: 'Add intervention',
-
+        address: 'Address',
+        avatar: 'Avatar'
     },
     fr: {
         id: 'ID',
@@ -125,7 +127,7 @@ const messages = {
         user_management: 'Gestion des utilisateurs',
         user_list: 'Liste des utilisateurs',
         email:'E-mail',
-        role: 'Rôle(s)',
+        role: 'Rôle',
         fullName: 'Nom complet',
         edit: 'Modifier',
         add_user: 'Ajouter un utilisateur',
@@ -166,6 +168,8 @@ const messages = {
         please_choose_an_agency: 'Veuillez choisir une agence !',
         logout: 'Se déconnecter',
         add_intervention: 'Ajouter intervention',
+        address: 'Adresse',
+        avatar: 'Avatar'
     }
 }
 

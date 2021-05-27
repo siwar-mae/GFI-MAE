@@ -1,16 +1,13 @@
-{% extends './base.html.twig' %}
+{% extends 'baseBack.html.twig' %}
+
 {% block body %}
     <div class="example-wrapper" id="app">
-        <index-backend
+        <User-edit
                 thumb="{{ user.thumbnail.link }}"
                 email="{{ user.email }}"
                 full-name="{{ user.fullName }}"
                 address="{{ user.address }}"
                 role="{{ user.roles[0] }}"
-                id="{{ user.id }}">
-
-        </index-backend>
+                id="{{ user.id }}"></User-edit>
     </div>
-    <script>
-    </script>
 {% endblock %}

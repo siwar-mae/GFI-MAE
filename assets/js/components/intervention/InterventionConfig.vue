@@ -51,7 +51,6 @@
                 </div>
             </div>
         </form>
-
     </div>
 </template>
 
@@ -75,7 +74,6 @@
             this.$root.$on('types',(data)=>{
                 this.types = data;
             });
-
             this.$root.$on('equipements',(data)=>{
                 this.equipements = data;
             });
@@ -116,7 +114,6 @@
                     }
                 );
             },
-
             getOptionsEquipement: async function(){
                 const config = {
                     headers: {
@@ -138,7 +135,6 @@
                     }
                 );
             },
-
             post: function () {
                 if(this.type === ''){
                     Vue.$toast.open({
@@ -167,12 +163,10 @@
                 }
                this.$root.$emit('observation', this.model.observation);
             },
-
             postAndReturn: function () {
                 this.post();
                 this.close()
             },
-
             postAndContinue: function () {
                 this.post();
                 this.type = '';
@@ -196,7 +190,6 @@
             equipement: function (val) {
                 this.model.observation = this.type + ' : ' + val
             },
-
         },
     }
 </script>

@@ -15,8 +15,8 @@ class IndexController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function __invoke()
+    public function __invoke(\Symfony\Component\Security\Core\Security $security)
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('home/index.html.twig', ['user' => $security->getUser()]);
     }
 }

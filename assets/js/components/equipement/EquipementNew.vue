@@ -53,7 +53,6 @@
 <script>
 import { CurrencyInput } from 'vue-currency-input'
 import Vue from 'vue';
-
 export default {
         name: "EquipementNew",
         components: { CurrencyInput },

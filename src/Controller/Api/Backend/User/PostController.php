@@ -41,7 +41,6 @@ class PostController extends AbstractController
             if ("" === $arrayUser['roles']) {
                 array_push($errors, 'roles_null');
             }
-            dump('1');die;
             return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
         if ($postService->post($arrayUser)) {
