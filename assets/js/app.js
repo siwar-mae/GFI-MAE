@@ -107,7 +107,15 @@ const messages = {
         logout: 'Logout',
         add_intervention: 'Add intervention',
         address: 'Address',
-        avatar: 'Avatar'
+        avatar: 'Avatar',
+        edit_profile: 'Edit profile',
+        personal_information: 'Personal Information',
+        save: 'Save',
+        updated_successfully: 'Updated successfully',
+        update_error: 'Update error',
+        required_address_field: 'Address fields required!',
+        required_thumb_field: 'Avatar fields required!'
+
     },
     fr: {
         id: 'ID',
@@ -169,7 +177,15 @@ const messages = {
         logout: 'Se déconnecter',
         add_intervention: 'Ajouter intervention',
         address: 'Adresse',
-        avatar: 'Avatar'
+        avatar: 'Avatar',
+        edit_profile: 'Editer le profil',
+        personal_information: 'Renseignements personnels',
+        save: 'Enregistrer',
+        updated_successfully: 'Modifié avec succès',
+        update_error: 'Erreur de modification',
+        required_address_field: 'Champs adresse requis !',
+        required_thumb_field: 'Champs avatar requis !'
+
     }
 }
 

@@ -30,6 +30,7 @@ class PostController extends AbstractController
         if (null === $arrayUser or 'undefined' === $arrayUser) {
             return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'User needs to be defined'], 400);
         }
+
         if (in_array("", $arrayUser)) {
             $errors = [];
             if ("" === $arrayUser['email']) {
@@ -40,6 +41,12 @@ class PostController extends AbstractController
             }
             if ("" === $arrayUser['roles']) {
                 array_push($errors, 'roles_null');
+            }
+            if ("" === $arrayUser['address']) {
+                array_push($errors, 'address_null');
+            }
+            if ("" === $arrayUser['thumb']) {
+                array_push($errors, 'thumb_null');
             }
             return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY);
         }

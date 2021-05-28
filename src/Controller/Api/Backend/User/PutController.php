@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class PutController extends AbstractController
 {
     /**
-     * @Route("putUser/{id}", name="api_user_get_put_form", options={"expose": true}, methods={"GET", "HEAD"})
+     * @Route("edit/{id}", name="api_user_get_put_form", options={"expose": true}, methods={"GET", "HEAD"})
      * @ParamConverter("user", options={"id" = "id"})
      */
     public function indexAction(Security $security, User $user)

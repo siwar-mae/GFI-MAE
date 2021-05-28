@@ -31,9 +31,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                <label for="fullanme" class="control-label col-lg-2">{{ $t('fullName') }} : </label>
+                                  <label for="fullanme" class="control-label col-lg-2">{{ $t('fullName') }} : </label>
+                                  <div class="col-lg-10">
+                                    <input class=" form-control" id="fullanme" name="fullanme" type="text" v-model="model.fullName"/>
+                                  </div>
+                                </div>
+                              <div class="form-group">
+                                <label for="address" class="control-label col-lg-2">{{ $t('address') }} : </label>
                                 <div class="col-lg-10">
-                                  <input class=" form-control" id="fullanme" name="fullanme" type="text" v-model="model.fullName"/>
+                                  <input class=" form-control" id="address" name="address" type="text" v-model="model.address"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-lg-2 control-label">{{ $t('avatar') }}</label>
+                                <div class="col-lg-6">
+                                  <input type="file" id="exampleInputFile" class="file-pos" @change="previewFiles">
                                 </div>
                               </div>
                                 <div class="form-group">
@@ -108,6 +120,22 @@
                                 autohide: 3000 ,
                                 class: "p-3 mb-2 bg-info text-white"
                               })
+                            }else if(this.model.address === '') {
+                              Vue.$toast.open({
+                                message: this.$t('required_address_field'),
+                                type: 'error',
+                                position: 'top-right',
+                                autohide: 3000 ,
+                                class: "p-3 mb-2 bg-info text-white"
+                              })
+                            }else if(this.model.thumb === '') {
+                              Vue.$toast.open({
+                                message: this.$t('required_thumb_field'),
+                                type: 'error',
+                                position: 'top-right',
+                                autohide: 3000 ,
+                                class: "p-3 mb-2 bg-info text-white"
+                              })
                             }else {
                                 Vue.$toast.open({
 
@@ -120,6 +148,9 @@
                         }
                     );
             },
+            previewFiles(event) {
+            this.model.thumb = event.target.files[0].name
+          }
         },
         mounted: async function() {
         },
@@ -129,7 +160,7 @@
                     email: '',
                     fullName: '',
                     address: '',
-                    thumbnail: '',
+                    thumb: '',
                     roles: [],
                 },
             }

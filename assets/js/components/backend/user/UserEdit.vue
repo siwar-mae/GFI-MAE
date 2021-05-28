@@ -6,7 +6,7 @@
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
             <li>
-              <h4>Edit Profile</h4>
+              <h4>{{ $t('edit_profile') }}</h4>
             </li>
           </ul>
         </div>
@@ -18,43 +18,47 @@
             <div id="edit" class="tab-pane active">
               <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 detailed">
-                  <h4 class="mb">Personal Information</h4>
+                  <h4 class="mb">{{ $t('personal_information') }}</h4>
                   <br>
                   <form role="form" class="form-horizontal" @submit.prevent="put">
                     <div class="form-group">
-                      <label class="col-lg-2 control-label">Avatar</label>
+                      <label class="col-lg-2 control-label">{{ $t('avatar') }}</label>
                       <div class="col-lg-6">
                         <input type="file" id="exampleInputFile" class="file-pos" @change="previewFiles">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-lg-2 control-label">FullName</label>
+                      <label class="col-lg-2 control-label">{{ $t('fullName') }}</label>
                       <div class="col-lg-6">
                         <input type="text" placeholder=" " id="c-name" class="form-control" v-model="model.fullName">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-lg-2 control-label">Role</label>
+                      <label class="col-lg-2 control-label">{{ $t('role') }}</label>
                       <div class="col-lg-6">
-                        <input type="text" placeholder=" " id="lives-in" class="form-control" v-model="model.role">
+                        <select class="form-control " id="nature" name="type" v-model="model.role">
+                          <option value="" disabled>{{ $t('please_choose_an_option') }}</option>
+                          <option value="ROLE_ADMIN">{{ $t('admin') }}</option>
+                          <option value="ROLE_USER">{{ $t('user') }}</option>
+                        </select>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-lg-2 control-label">Address</label>
+                      <label class="col-lg-2 control-label">{{ $t('address') }}</label>
                       <div class="col-lg-6">
                         <input type="text" placeholder=" " id="addr" class="form-control" v-model="model.address">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-lg-2 control-label">Email</label>
+                      <label class="col-lg-2 control-label">{{ $t('email') }}</label>
                       <div class="col-lg-6">
                         <input type="text" placeholder=" " id="email" class="form-control" v-model="model.email">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-theme" type="submit">Save</button>
-                        <button class="btn btn-theme04" type="button">Cancel</button>
+                        <button class="btn btn-theme" type="submit">{{ $t('save') }}</button>
+                        <button class="btn btn-theme04" type="button">{{ $t('cancel') }}</button>
                       </div>
                     </div>
                   </form>
@@ -132,7 +136,7 @@ export default {
               }
               , (error) => {
                   Vue.$toast.open({
-                    message: this.$t('error'),
+                    message: this.$t('update_error'),
                     type: 'error',
                     position: 'top-right',
                     autohide: 3000 ,

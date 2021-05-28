@@ -111,7 +111,7 @@ export default {
     },
     goToEditPage: function (id){
       if (id !== undefined) {
-        window.location.replace("/putUser/"+ id);
+        window.location.replace("/"+ id);
       }
     },
   },

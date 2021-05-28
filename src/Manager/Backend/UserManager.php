@@ -8,6 +8,7 @@ use App\Repository\ThumbnailRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Security;
 
 class UserManager
@@ -24,14 +25,16 @@ class UserManager
      * @var Security
      */
     protected $security;
+    private $userPasswordEncoder;
 
     public function __construct(
-        EntityManagerInterface $entityManager, Security $security)
+        EntityManagerInterface $entityManager, Security $security, UserPasswordEncoderInterface $userPasswordEncoder)
     {
         $this->repository = $entityManager->getRepository(User::class);
         $this->thumbnailRepository = $entityManager->getRepository(Thumbnail::class);
         $this->security = $security;
         $this->entityManager = $entityManager;
+        $this->passwordEncoder = $userPasswordEncoder;
     }
 
     public function getData()
@@ -52,9 +55,12 @@ class UserManager
         $user->setFullName($arrayUser['fullName']);
         $user->setEmail($arrayUser['email']);
         $user->setRoles($arrayUser['roles']);
-        $user->setPassword('test');
+        $user->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
         $user->setAddress($arrayUser['address']);
-        $user->setThumbnail($arrayUser['thumbnail']);
+        $thumbnail = $this->thumbnailRepository->findBy(['link' => 'img/'.$arrayUser['thumb']]);
+        if($thumbnail){
+            $user->setThumbnail($thumbnail[0]);
+        }
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
@@ -68,7 +74,9 @@ class UserManager
         $user->setFullName($arrayUser['fullName']);
         $user->setRoles([$arrayUser['role']]);
         $thumbnail = $this->thumbnailRepository->findBy(['link' => 'img/'.$arrayUser['thumb']]);
-        $user->setThumbnail($thumbnail[0]);
+        if($thumbnail){
+            $user->setThumbnail($thumbnail[0]);
+        }
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
