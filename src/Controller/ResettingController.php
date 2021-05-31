@@ -4,6 +4,8 @@
 namespace App\Controller;
 
 use App\Form\ResettingType;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
 use App\Security\Mailer;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Validator\Constraints\Email;
@@ -94,41 +97,26 @@ class ResettingController extends AbstractController
      */
     public function resetting(User $user, $token, Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        // interdit l'accès à la page si:
-        // le token associé au membre est null
-        // le token enregistré en base et le token présent dans l'url ne sont pas égaux
-        // le token date de plus de 10 minutes
-
+        $user->setToken($token);
+        $date = new \DateTime();
+        $date->format('Y-m-d H:i:s');
+        $user->setPasswordRequestedAt($date);
         if ($user->getToken() === null || $token !== $user->getToken() || !$this->isRequestInTime($user->getPasswordRequestedAt()))
         {
             throw new AccessDeniedHttpException();
         }
-
         $form = $this->createForm(ResettingType::class, $user);
         $form->handleRequest($request);
+        $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+        $user->setPassword($password);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-
-            // réinitialisation du token à null pour qu'il ne soit plus réutilisable
-            $user->setToken(null);
-            $user->setPasswordRequestedAt(null);
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
-
-            $request->getSession()->getFlashBag()->add('success', "Votre mot de passe a été renouvelé.");
-
-            return $this->redirectToRoute('app_login');
-
-        }
-
-        return $this->render('resetting/index.html.twig', [
-            'form' => $form->createView()
-        ]);
-
+        // réinitialisation du token à null pour qu'il ne soit plus réutilisable
+        $user->setToken(null);
+        $user->setPasswordRequestedAt(null);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+        $request->getSession()->getFlashBag()->add('success', "Votre mot de passe a été renouvelé.");
+        return $this->redirectToRoute('app_login');
     }
 }

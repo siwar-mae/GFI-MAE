@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GFI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GFI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ResettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Mailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -383,7 +380,7 @@
       <workItem from="1622012242406" duration="15516000" />
       <workItem from="1622098209621" duration="16203000" />
       <workItem from="1622187076142" duration="9490000" />
-      <workItem from="1622444420519" duration="13882000" />
+      <workItem from="1622444420519" duration="25938000" />
     </task>
     <servers />
   </component>

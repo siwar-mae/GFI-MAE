@@ -3,6 +3,7 @@
 
 namespace App\Security;
 
+use Swift_Mailer;
 use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
@@ -11,7 +12,7 @@ class Mailer
     private $engine;
     private $mailer;
 
-    public function __construct(\Swift_Mailer $mailer, Environment $engine)
+    public function __construct(Swift_Mailer $mailer, Environment $engine)
     {
         $this->engine = $engine;
         $this->mailer = $mailer;
