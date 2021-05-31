@@ -114,7 +114,9 @@ const messages = {
         updated_successfully: 'Updated successfully',
         update_error: 'Update error',
         required_address_field: 'Address fields required!',
-        required_thumb_field: 'Avatar fields required!'
+        required_thumb_field: 'Avatar fields required!',
+        password: 'Password',
+        required_pwd_field: 'Password fields required!'
 
     },
     fr: {
@@ -184,7 +186,9 @@ const messages = {
         updated_successfully: 'Modifié avec succès',
         update_error: 'Erreur de modification',
         required_address_field: 'Champs adresse requis !',
-        required_thumb_field: 'Champs avatar requis !'
+        required_thumb_field: 'Champs avatar requis !',
+        password: 'Mot de passe',
+        required_pwd_field: 'Champs mot de passe requis !'
 
     }
 }

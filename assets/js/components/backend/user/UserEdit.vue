@@ -52,7 +52,13 @@
                     <div class="form-group">
                       <label class="col-lg-2 control-label">{{ $t('email') }}</label>
                       <div class="col-lg-6">
-                        <input type="text" placeholder=" " id="email" class="form-control" v-model="model.email">
+                        <input type="email" placeholder=" " id="email" class="form-control" v-model="model.email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd" class="control-label col-lg-2">{{ $t('password') }} : </label>
+                      <div class="col-lg-6">
+                        <input class=" form-control" id="pwd" name="pwd" type="password" v-model="model.pwd"/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -92,7 +98,8 @@ export default {
     address: String,
     role: String,
     id: String,
-    thumb: String
+    thumb: String,
+    pwd: ''
   },
   mounted() {
     this.model.fullName = this.fullName;
@@ -101,6 +108,7 @@ export default {
     this.model.role = this.role;
     this.model.id = this.id;
     this.model.thumb = this.thumb;
+    this.model.pwd = this.pwd;
   },
   data () {
     return {
@@ -110,7 +118,8 @@ export default {
         role: '',
         address: '',
         id: '',
-        thumb: ''
+        thumb: '',
+        pwd: ''
       },
     }
   },

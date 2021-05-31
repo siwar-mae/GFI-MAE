@@ -5,22 +5,23 @@ namespace App\Controller\Api\Backend\User;
 
 use App\Entity\User;
 use App\Service\Backend\User\PutService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class PutController extends AbstractController
 {
     /**
-     * @Route("edit/{id}", name="api_user_get_put_form", options={"expose": true}, methods={"GET", "HEAD"})
-     * @ParamConverter("user", options={"id" = "id"})
+     * @Route("/user{id}", name="api_user_get_put_form", options={"expose": true}, methods={"GET", "HEAD"})
      */
-    public function indexAction(Security $security, User $user)
+    public function indexAction(Request $request, EntityManagerInterface $entityManager)
     {
+        $id = substr($request->getPathInfo(),5, 2);
+        $user =  $entityManager->getRepository(User::class)->find($id);
         return $this->render('backend/user/edit/index.html.twig', ['user' => $user]);
     }
 

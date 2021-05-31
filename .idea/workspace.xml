@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserEdit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/user/UserNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Backend/User/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Backend/User/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Api/Backend/User/PutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Backend/User/PutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Manager/Backend/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/Backend/UserManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/backend/user/edit/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/backend/user/edit/index.html.twig" afterDir="false" />
@@ -379,7 +378,8 @@
       <workItem from="1621927244882" duration="4067000" />
       <workItem from="1622012242406" duration="15516000" />
       <workItem from="1622098209621" duration="16203000" />
-      <workItem from="1622187076142" duration="8448000" />
+      <workItem from="1622187076142" duration="9490000" />
+      <workItem from="1622444420519" duration="3214000" />
     </task>
     <servers />
   </component>

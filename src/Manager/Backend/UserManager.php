@@ -55,7 +55,7 @@ class UserManager
         $user->setFullName($arrayUser['fullName']);
         $user->setEmail($arrayUser['email']);
         $user->setRoles($arrayUser['roles']);
-        $user->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
+        $user->setPassword($this->passwordEncoder->encodePassword($user, $arrayUser['pwd']));
         $user->setAddress($arrayUser['address']);
         $thumbnail = $this->thumbnailRepository->findBy(['link' => 'img/'.$arrayUser['thumb']]);
         if($thumbnail){
@@ -73,6 +73,7 @@ class UserManager
         $user->setEmail($arrayUser['email']);
         $user->setFullName($arrayUser['fullName']);
         $user->setRoles([$arrayUser['role']]);
+        $user->setPassword($this->passwordEncoder->encodePassword($user, $arrayUser['pwd']));
         $thumbnail = $this->thumbnailRepository->findBy(['link' => 'img/'.$arrayUser['thumb']]);
         if($thumbnail){
             $user->setThumbnail($thumbnail[0]);

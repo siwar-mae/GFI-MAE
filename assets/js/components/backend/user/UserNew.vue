@@ -43,6 +43,12 @@
                                 </div>
                               </div>
                               <div class="form-group">
+                                <label for="pwd" class="control-label col-lg-2">{{ $t('password') }} : </label>
+                                <div class="col-lg-10">
+                                  <input class=" form-control" id="pwd" name="pwd" type="password" v-model="model.pwd"/>
+                                </div>
+                              </div>
+                              <div class="form-group">
                                 <label class="col-lg-2 control-label">{{ $t('avatar') }}</label>
                                 <div class="col-lg-6">
                                   <input type="file" id="exampleInputFile" class="file-pos" @change="previewFiles">
@@ -94,6 +100,7 @@
                             self.model.email = '';
                             self.model.fullName = '';
                             self.model.roles = '' ;
+                            self.model.pwd = '' ;
                         }
                         , (error) => {
                             if(this.model.email === ''){
@@ -136,6 +143,14 @@
                                 autohide: 3000 ,
                                 class: "p-3 mb-2 bg-info text-white"
                               })
+                            }else if(this.model.pwd === '') {
+                              Vue.$toast.open({
+                                message: this.$t('required_pwd_field'),
+                                type: 'error',
+                                position: 'top-right',
+                                autohide: 3000 ,
+                                class: "p-3 mb-2 bg-info text-white"
+                              })
                             }else {
                                 Vue.$toast.open({
 
@@ -162,6 +177,7 @@
                     address: '',
                     thumb: '',
                     roles: [],
+                    pwd: ''
                 },
             }
         },
