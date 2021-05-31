@@ -64,7 +64,8 @@
                             <input type="checkbox" id="remember_me" name="_remember_me"> {{ 'remember_me'| trans }}
                         </label>
                         <span class="pull-right">
-                                <a data-toggle="modal" href="login.html#myModal"> {{ 'forgot_your_password'| trans }}</a>
+{#                                <a data-toggle="modal" href="login.html#myModal"> {{ 'forgot_your_password'| trans }}</a>#}
+                            <a href="{{absolute_url(path('resetting', {'id': app.user.id, 'token': user.token|default('123abc')}))}}">{{ 'forgot_your_password'| trans }}</a>
                         </span>
                     </div>
                 <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> {{ 'log_in'|trans }}</button>
