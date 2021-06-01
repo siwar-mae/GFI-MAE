@@ -56,8 +56,9 @@ class SecurityController extends AbstractController
                               TokenGeneratorInterface $tokenGenerator,
                               EntityManagerInterface $entityManager): Response
     {
+        $locale = $request->getLocale();
         // On initialise le formulaire
-        $form = $this->createForm(ResetPassType::class);
+        $form = $this->createForm(ResetPassType::class, array('locale' => $locale));
 
         // On traite le formulaire
         $form->handleRequest($request);

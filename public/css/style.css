@@ -250,6 +250,10 @@ ul.top-menu > li > .logout {
     padding-left: 32px;
 }
 
+.btn-margin{
+    margin-top: 20px;
+}
+
 #sidebar .sub-menu > .sub li:last-child {
     padding-bottom: 10px;
 }

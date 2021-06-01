@@ -21,6 +21,11 @@ structure: 'Structure'
 date_of_departure: 'Date de départ'
 description_and_observation: "Description de l'intervention et observations"
 signature: 'Signature'
+forget_password: 'Mot de passe oublié'
+send: 'Envoyer'
+new_password: 'Nouveau mot de passe'
+validate_password: 'Valider le mot de passe'
+reset_password: 'Réinitialiser mot de passe'
 
 
 

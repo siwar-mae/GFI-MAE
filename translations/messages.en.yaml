@@ -21,3 +21,9 @@ structure: 'Structure'
 date_of_departure: 'Date of departure'
 description_and_observation: "Description of the intervention and observations"
 signature: 'Signature'
+forget_password: 'Forgot your password'
+send: 'Send'
+new_password: 'New password'
+validate_password: 'Validate password'
+reset_password: 'Reset password'
+
