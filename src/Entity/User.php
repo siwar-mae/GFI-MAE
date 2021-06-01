@@ -187,34 +187,11 @@ class User implements UserInterface
     }
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
-     * @var \DateTime
-     */
-    private $passwordRequestedAt;
-
-    /**
      * @var string
      *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $token;
-
-    /*
-     * Get passwordRequestedAt
-     */
-    public function getPasswordRequestedAt()
-    {
-        return $this->passwordRequestedAt;
-    }
-
-    /*
-     * Set passwordRequestedAt
-     */
-    public function setPasswordRequestedAt($passwordRequestedAt)
-    {
-        $this->passwordRequestedAt = $passwordRequestedAt;
-        return $this;
-    }
 
     /*
      * Get token
@@ -232,4 +209,26 @@ class User implements UserInterface
         $this->token = $token;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $reset_token;
+
+    /**
+     * @return mixed
+     */
+    public function getResetToken()
+    {
+        return $this->reset_token;
+    }
+
+    /**
+     * @param mixed $reset_token
+     */
+    public function setResetToken($reset_token): void
+    {
+        $this->reset_token = $reset_token;
+    }
+
 }

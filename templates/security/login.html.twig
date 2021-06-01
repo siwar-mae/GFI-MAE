@@ -20,28 +20,6 @@
     <div id="login-page">
         <div class="container">
             <form class="form-login" method="post">
-                <!-- Modal -->
-                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">{{ 'forgot_your_password'|trans }}</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>{{ 'Nouveau mot de passe'|trans }}</p>
-                                <input type="password" name="first_options" autocomplete="off" class="form-control placeholder-no-fix" value="password.first"><br>
-                                <p>{{ 'Confirmer le mot de passe'|trans }}</p>
-                                <input type="password" name="second_options" autocomplete="off" class="form-control placeholder-no-fix" value="password.second">
-                            </div>
-                            <div class="modal-footer">
-                                <button data-dismiss="modal" class="btn btn-default" type="button">{{ 'cancel'|trans }}</button>
-                                <a href="{{absolute_url(path('resetting', {'id': user.id, 'token': csrf_token('authenticate')}))}}">{{ 'submit'| trans }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- modal -->
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
@@ -57,7 +35,6 @@
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
                     >
-
 {#                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
 {#                    See https://symfony.com/doc/current/security/remember_me.html#}
 
@@ -66,8 +43,7 @@
                             <input type="checkbox" id="remember_me" name="_remember_me"> {{ 'remember_me'| trans }}
                         </label>
                         <span class="pull-right">
-                                <a data-toggle="modal" href="login.html#myModal"> {{ 'forgot_your_password'| trans }}</a>
-{#                                <a href="{{absolute_url(path('resetting', {'token': user.token|default('123abc')}))}}">{{ 'forgot_your_password'| trans }}</a>#}
+                                <a href="{{absolute_url(path('app_forgotten_password'))}}">{{ 'forgot_your_password'| trans }}</a>
                         </span>
                     </div>
                 <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> {{ 'log_in'|trans }}</button>

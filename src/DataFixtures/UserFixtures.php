@@ -27,6 +27,7 @@ class UserFixtures extends Fixture
         $user->setAddress('Ariana');
         $thumbnail1 = $manager->getRepository(Thumbnail::class)->findBy(['link' => 'img/ui-divya.jpg'])[0];
         $user->setThumbnail($thumbnail1);
+        $user->setToken(md5(uniqid()));
         $manager->persist($user);
         $user2 = new User();
         $user2->setEmail('siwbouss@gmail.com');
@@ -36,6 +37,7 @@ class UserFixtures extends Fixture
         $user2->setAddress('Tunis');
         $thumbnail2 = $manager->getRepository(Thumbnail::class)->findBy(['link' => 'img/avatar.png'])[0];
         $user2->setThumbnail($thumbnail2);
+        $user2->setToken(md5(uniqid()));
         $manager->persist($user2);
         $manager->flush();
     }
