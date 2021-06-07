@@ -160,18 +160,23 @@
                         autohide: 3000 ,
                         class: "p-3 mb-2 bg-info text-white"
                     });
+                }else if(this.observation !== ''){
+                  this.$root.$emit('observation', this.model.observation);
+                  return true;
                 }
-               this.$root.$emit('observation', this.model.observation);
             },
             postAndReturn: function () {
                 this.post();
                 this.close()
             },
             postAndContinue: function () {
-                this.post();
-                this.type = '';
-                this.model.observation = '';
-                this.equipement = '';
+                // this.post();
+                if(this.post()){
+                  this.type = '';
+                  this.model.observation = '';
+                  this.equipement = '';
+                }
+
             },
             openModalType: function () {
                 this.showModalType = true;
