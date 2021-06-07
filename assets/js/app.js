@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import InterventionNew from './components/intervention/InterventionNew';
 import InterventionList from './components/intervention/InterventionList';
+import InterventionAffect from './components/intervention/InterventionAffect';
 import Index from './components/home/Index';
 import Resource from 'vue-resource';
 import VueRouter from 'vue-router'
@@ -116,7 +117,7 @@ const messages = {
         required_address_field: 'Address fields required!',
         required_thumb_field: 'Avatar fields required!',
         password: 'Password',
-        required_pwd_field: 'Password fields required!'
+        required_pwd_field: 'Password fields required!',
 
     },
     fr: {
@@ -188,7 +189,7 @@ const messages = {
         required_address_field: 'Champs adresse requis !',
         required_thumb_field: 'Champs avatar requis !',
         password: 'Mot de passe',
-        required_pwd_field: 'Champs mot de passe requis !'
+        required_pwd_field: 'Champs mot de passe requis !',
 
     }
 }
@@ -204,5 +205,5 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     i18n,
-    components: {InterventionNew, InterventionList, Index, UserList, UserNew, InterventionReport, IndexBackend, UserEdit}
+    components: {InterventionNew, InterventionList, Index, UserList, UserNew, InterventionReport, IndexBackend, UserEdit, InterventionAffect}
 });

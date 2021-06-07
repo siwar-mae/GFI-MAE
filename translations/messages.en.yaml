@@ -28,4 +28,6 @@ validate_password: 'Validate password'
 reset_password: 'Reset password'
 dont_panic: "DON'T PANIC!!"
 page_does_not_exists: "The page you are looking for doesn't exist."
+affect_intervention: 'Affect intervention'
+
 
