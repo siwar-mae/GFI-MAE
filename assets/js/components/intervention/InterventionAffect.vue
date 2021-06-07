@@ -29,7 +29,7 @@
           </section>
         </aside>
       </div>
-      <!-- /row -->
+      <!-- page end-->
     </section>
   </section>
 </template>
