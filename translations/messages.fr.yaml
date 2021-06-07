@@ -26,7 +26,8 @@ send: 'Envoyer'
 new_password: 'Nouveau mot de passe'
 validate_password: 'Valider le mot de passe'
 reset_password: 'Réinitialiser mot de passe'
-
+dont_panic: 'PAS DE PANIQUE !!'
+page_does_not_exists: "La page que vous recherchez n'existe pas."
 
 
 
