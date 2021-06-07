@@ -179,7 +179,7 @@
             this.set();
             this.agencies = await this.getOptions();
             this.$root.$on('observation',(data)=>{
-                this.model.observation = this.model.observation + '\n' + data
+                this.model.observation = this.model.observation + '\n' + '*' + data
             });
             this.$root.$on('close',()=>{
                 this.showModalConfig = false
