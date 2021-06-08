@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta rel="stylesheet" href="https://unpkg.com/v-data-table/dist/v-data-table.css">
@@ -15,12 +14,10 @@
         <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!--external css-->
         <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
         <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
         <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
         <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
         <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
-        <link href="lib/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/style-responsive.css" rel="stylesheet">
@@ -31,9 +28,11 @@
           Author: TemplateMag.com
           License: https://templatemag.com/license/
         ======================================================= -->
+            <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.6/fullcalendar.min.css'>
+            <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+            <link rel="stylesheet" href="css/style.css">
     {% endblock %}
 </head>
-
 <body>
 <section id="page-container">
     <header class="header black-bg">
@@ -179,7 +178,6 @@
     <script src="lib/chart-master/Chart.js"></script>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="lib/fullcalendar/fullcalendar.min.js"></script>
     <script src="https://unpkg.com/v-data-table/dist/v-data-table.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" language="javascript" src="lib/advanced-datatable/js/jquery.js"></script>
@@ -193,10 +191,8 @@
     <script src="lib/common-scripts.js"></script>
     <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="lib/gritter-conf.js"></script>
-    <script src="lib/calendar-conf-events.js"></script>
     <!--script for this page-->
     <script src="lib/sparkline-chart.js"></script>
-    <script src="lib/zabuto_calendar.js"></script>
     <script type="application/javascript">
         function myNavFunction(id) {
             $("#date-popover").hide();
@@ -267,6 +263,74 @@
         });
 
     </script>
+{#    <script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>#}
+    <script src='https://code.jquery.com/ui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.6/fullcalendar.min.js'></script>
+    <script  src="js/index.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            /* initialize the external events
+            -----------------------------------------------------------------*/
+            $('#external-events .fc-event').each(function() {
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 999,
+                    revert: true,      // will cause the event to go back to its
+                    revertDuration: 0  //  original position after the drag
+                });
+
+            });
+            /* initialize the calendar
+            -----------------------------------------------------------------*/
+            $('#calendar').fullCalendar({
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                dragRevertDuration: 0,
+                drop: function() {
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+                eventDragStop: function( event, jsEvent, ui, view ) {
+
+                    if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
+                        $('#calendar').fullCalendar('removeEvents', event._id);
+                        var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
+                        el.draggable({
+                            zIndex: 999,
+                            revert: true,
+                            revertDuration: 0
+                        });
+                        el.data('event', { title: event.title, id :event.id, stick: true });
+                    }
+                }
+            });
+
+            var isEventOverDiv = function(x, y) {
+                var external_events = $( '#external-events' );
+                var offset = external_events.offset();
+                offset.right = external_events.width() + offset.left;
+                offset.bottom = external_events.height() + offset.top;
+                // Compare
+                if (x >= offset.left
+                    && y >= offset.top
+                    && x <= offset.right
+                    && y <= offset .bottom) { return true; }
+                return false;
+            }
+        });
+    </script>
+
 {% endblock %}
 </body>
 </html>

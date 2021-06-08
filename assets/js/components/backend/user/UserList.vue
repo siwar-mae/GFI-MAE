@@ -64,6 +64,7 @@ export default {
   components: {UserEdit },
   data() {
     return {
+      items: [],
       fields: [
         { key: 'id', _style:'min-width:100px', label: this.$t('id') },
         { key: 'email', _style:'min-width:100px;', label: this.$t('email') },
@@ -81,7 +82,6 @@ export default {
       ],
       details: [],
       collapseDuration: 0,
-      items: [],
       tableFilter: {
         label: this.$t('filter_datagrid'),
         placeholder: this.$t('type_string')

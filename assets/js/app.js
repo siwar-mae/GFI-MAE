@@ -2,7 +2,6 @@ import Vue from 'vue';
 import InterventionNew from './components/intervention/InterventionNew';
 import InterventionList from './components/intervention/InterventionList';
 import InterventionAffect from './components/intervention/InterventionAffect';
-import Index from './components/home/Index';
 import Resource from 'vue-resource';
 import VueRouter from 'vue-router'
 import { routes } from "./router/index";
@@ -34,7 +33,7 @@ Vue.component('field-date-picker-mazars', DatePickerMazars);
 Vue.component('field-select-mazars', SelectMazars);
 import UserList from './components/backend/user/UserList';
 import UserNew from './components/backend/user/UserNew';
-import IndexBackend from './components/backend/home/IndexBackend';
+import Index from './components/backend/home/Index';
 import InterventionReport from './components/intervention/InterventionReport';
 import UserEdit from './components/backend/user/UserEdit';
 
@@ -118,7 +117,7 @@ const messages = {
         required_thumb_field: 'Avatar fields required!',
         password: 'Password',
         required_pwd_field: 'Password fields required!',
-
+        affect_intervention: 'Affect intervention'
     },
     fr: {
         id: 'ID',
@@ -190,6 +189,7 @@ const messages = {
         required_thumb_field: 'Champs avatar requis !',
         password: 'Mot de passe',
         required_pwd_field: 'Champs mot de passe requis !',
+        affect_intervention: 'Affecter intervention'
 
     }
 }
@@ -205,5 +205,5 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     i18n,
-    components: {InterventionNew, InterventionList, Index, UserList, UserNew, InterventionReport, IndexBackend, UserEdit, InterventionAffect}
+    components: {InterventionNew, InterventionList, UserList, UserNew, InterventionReport, Index, UserEdit, InterventionAffect}
 });

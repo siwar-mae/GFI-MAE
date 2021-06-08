@@ -1,7 +1,7 @@
 {% extends './base.html.twig' %}
 {% block body %}
     <div class="example-wrapper" id="app">
-        <index-backend
+        <index
                 thumb="{{ user.thumbnail.link }}"
                 email="{{ user.email }}"
                 full-name="{{ user.fullName }}"
@@ -9,7 +9,7 @@
                 role="{{ user.roles[0] }}"
                 id="{{ user.id }}">
 
-        </index-backend>
+        </index>
     </div>
     <script>
     </script>

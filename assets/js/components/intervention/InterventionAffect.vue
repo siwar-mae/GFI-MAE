@@ -1,58 +1,60 @@
 <template>
   <section id="main-content">
     <section class="wrapper">
-      <h3><i class="fa fa-angle-right"></i> Calendar</h3>
-      <!-- page start-->
+      <h3><i class="fa fa-angle-right"></i> {{ $t('affect_intervention') }}</h3>
       <div class="row mt">
-        <aside class="col-lg-3 mt">
-          <h4><i class="fa fa-angle-right"></i> Draggable Events</h4>
-          <div id="external-events">
-            <div class="external-event label label-theme">My Event 1</div>
-            <div class="external-event label label-success">My Event 2</div>
-            <div class="external-event label label-info">My Event 3</div>
-            <div class="external-event label label-warning">My Event 4</div>
-            <div class="external-event label label-danger">My Event 5</div>
-            <div class="external-event label label-default">My Event 6</div>
-            <div class="external-event label label-theme">My Event 7</div>
-            <div class="external-event label label-info">My Event 8</div>
-            <div class="external-event label label-success">My Event 9</div>
-            <p class="drop-after">
-              <input type="checkbox" id="drop-remove"> Remove After Drop
-            </p>
-          </div>
-        </aside>
-        <aside class="col-lg-9 mt">
-          <section class="panel">
-            <div class="panel-body">
-              <div id="calendar" class="has-toolbar"></div>
+        <div class="col-lg-12">
+            <div id='wrap'>
+              <div id='external-events'>
+                <div id='external-events-listing'>
+                  <h4>Users</h4>
+                  <div v-for="user in users">
+                    <div class='fc-event'>{{ user.id }}</div>
+                  </div>
+                </div>
+                <p>
+                  <input type='checkbox' id='drop-remove' checked='checked' />
+                  <label for='drop-remove'>remove after drop</label>
+                </p>
+              </div>
+              <div id='calendar'></div>
+              <div style='clear:both'></div>
             </div>
-          </section>
-        </aside>
+        </div>
       </div>
-      <!-- page end-->
     </section>
   </section>
+
 </template>
 
 <script>
 export default {
   name: "InterventionAffect",
-  components: { },
+  components: {},
   data() {
     return {
-    }
+      users: []
+    };
   },
   methods: {
+    list: function () {
+      const axios = require('axios');
+      let self = this;
+      // Make a request for a user with a given ID
+      axios.get('/api/users/list')
+          .then(function (response) {
+            // handle success
+            self.users = response.data;
+          });
+    },
   },
   mounted() {
-  },
-  computed: {
-  },
-  watch: {
-  },
-}
+    this.list()
+  }
+};
 </script>
-
 <style scoped>
+
 </style>
+
 
