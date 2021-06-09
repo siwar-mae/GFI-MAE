@@ -9,8 +9,9 @@
                 <div id='external-events-listing'>
                   <h4>Users</h4>
                   <div v-for="user in users">
-                    <div class='fc-event'>{{ user.id }}</div>
+                    <div class="fc-event">{{ user.email }}</div>
                   </div>
+                  <div class="fc-event"></div>
                 </div>
                 <p>
                   <input type='checkbox' id='drop-remove' checked='checked' />
@@ -33,23 +34,23 @@ export default {
   components: {},
   data() {
     return {
-      users: []
+      emails: [],
+      users: [],
     };
   },
   methods: {
-    list: function () {
+    list: async function () {
       const axios = require('axios');
-      let self = this;
-      // Make a request for a user with a given ID
-      axios.get('/api/users/list')
-          .then(function (response) {
-            // handle success
-            self.users = response.data;
-          });
+      const promise = await axios.get('/api/users/list')
+      return promise.data;
     },
   },
-  mounted() {
-    this.list()
+  props: {
+    employees : Array
+  },
+    mounted() {
+    this.list();
+    this.users = this.employees
   }
 };
 </script>

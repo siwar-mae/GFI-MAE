@@ -1,6 +1,6 @@
 {% extends 'baseBack.html.twig' %}
 {% block body %}
     <div class="example-wrapper" id="app">
-        <intervention-affect></intervention-affect>
+        <intervention-affect :employees="{{users |json_encode}}"></intervention-affect>
     </div>
 {% endblock %}
