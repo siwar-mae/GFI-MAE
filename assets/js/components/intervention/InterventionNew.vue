@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-theme" type="submit">{{ $t('add') }}</button>
+                                      <button class="btn btn-theme" type="button" @click="openModalConfig">{{ $t('configure_observation') }}</button>
                                     </div>
                                 </div>
                             </form>
