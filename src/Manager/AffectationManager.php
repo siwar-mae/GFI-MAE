@@ -5,6 +5,7 @@ namespace App\Manager;
 
 
 use App\Entity\Affectation;
+use App\Entity\User;
 use App\Repository\AffectationRepository;
 use App\Repository\UserRepository;
 use DateTime;
@@ -26,18 +27,28 @@ class AffectationManager
         EntityManagerInterface $entityManager)
     {
         $this->repository = $entityManager->getRepository(Affectation::class);
+        $this->userRepository = $entityManager->getRepository(User::class);
         $this->entityManager = $entityManager;
     }
 
+    /**
+     * @throws \Exception
+     */
     public function post($data){
         $affectation = new Affectation();
         $affectation->setDate(new DateTime($data['date']));
         $user = $this->userRepository->findOneBy(['email' => $data['user']]);
         $affectation->setUser($user->getId());
-        $this->entityManager->persist($affectation);
-        $this->entityManager->flush();
-
-        return true;
+        $affectations = $this->repository->findAll();
+        if($affectations !== []){
+            $verify = $this->repository->findByUserAndDate($affectation->getUser(), $affectation->getDate());
+            if($verify === []){
+                $this->entityManager->persist($affectation);
+                $this->entityManager->flush();
+                return true;
+            }
+        }else {
+            return false;
+        }
     }
-
 }

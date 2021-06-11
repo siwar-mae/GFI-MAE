@@ -18,14 +18,13 @@ class Affectation
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=false)
      */
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     */
+    * @ORM\Column(type="integer", nullable=false)
+    */
     private $user;
 
     public function getId(): ?int

@@ -47,4 +47,15 @@ class AffectationRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByUserAndDate($user, $date)
+    {
+        return $this->createQueryBuilder('b')
+            ->where('b.user = :user')
+            ->andWhere('b.date = :date')
+            ->setParameter('user', $user)
+            ->setParameter('date', $date)
+            ->getQuery()
+            ->getArrayResult();
+    }
 }

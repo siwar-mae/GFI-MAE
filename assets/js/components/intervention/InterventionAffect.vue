@@ -17,9 +17,6 @@
                 <input type='checkbox' id='drop-remove' checked='checked' />
                 <label for='drop-remove'>remove after drop</label>
               </p>
-              <p>
-                <button class="btn btn-theme" type="button" @click="post">{{ $t('affect') }}</button>
-              </p>
             </div>
             <div id='calendar'></div>
             <div style='clear:both'></div>
@@ -32,8 +29,7 @@
 </template>
 
 <script>
-import Vue from "vue";
-
+import Vue from 'vue';
 export default {
   name: "InterventionAffect",
   components: {},
@@ -54,41 +50,12 @@ export default {
     formatDate: function (value) {
       return this.$options.filters.formatDate(value, 'fr');
     },
-    post: function (){
-      const axios = require('axios');
-      let self = this;
-      const config = {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'
-        }
-      };
-      axios.post('/api/affectations/post', {user: self.user, date: self.date}, config)
-          .then(response => {
-               /* Vue.$toast.open({
-                  message: $t('added_successfully'),
-                  type: 'success',
-                  position: 'top-right',
-                  autohide: 3000 ,
-                  class: "p-3 mb-2 bg-info text-white"
-                });*/
-                console.log('success')
-              }
-              , (error) => {
-                console.log(error)
-              });
-    },
   },
   props: {
     employees : Array,
-    userB: String,
   },
   mounted() {
     this.users = this.employees;
-    document.addEventListener("affectation", function (e) {
-      self.userB = e.detail.user;
-      this.date = e.detail.date;
-    });
   }
 };
 $(function() {
@@ -141,7 +108,6 @@ $(function() {
       var affectation = new CustomEvent("affectation", {
         "detail": {"user":self.user,"date":self.date }
       });
-
       document.dispatchEvent(affectation);
     },
   });
@@ -157,7 +123,41 @@ $(function() {
         && x <= offset.right
         && y <= offset .bottom) { return true; }
     return false;
-  }
+  };
+
+  document.addEventListener("affectation", function (e) {
+    this.user = e.detail.user;
+    this.date = e.detail.date;
+    const axios = require('axios');
+    let self = this;
+    const config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      }
+    };
+    axios.post('/api/affectations/post', {user: self.user, date: self.date}, config)
+        .then(response => {
+               Vue.$toast.open({
+                 message: 'added_successfully',
+                 type: 'success',
+                 position: 'top-right',
+                 autohide: 3000 ,
+                 class: "p-3 mb-2 bg-info text-white"
+               });
+            }
+            , (error) => {
+              Vue.$toast.open({
+                message: 'user_affected_to_this_date',
+                type: 'error',
+                position: 'top-right',
+                autohide: 3000 ,
+                class: "p-3 mb-2 bg-info text-white"
+              });
+            });
+  });
+
+
 });
 </script>
 <style scoped>
