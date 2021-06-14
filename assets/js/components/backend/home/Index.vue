@@ -29,6 +29,17 @@
         <!-- /col-lg-12 -->
         <!-- /row -->
       </div>
+      <div class="detailed mt">
+        <h4>Activities</h4>
+        <div class="recent-activity" v-for="item in items">
+          <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
+          <div class="activity-panel">
+            <h5>Intervention:  {{item.id}}</h5>
+            <p>Le: {{item.date.date}}</p>
+          </div>
+        </div>
+        <!-- /recent-activity -->
+      </div>
       <!-- /container -->
     </section>
     <!-- /wrapper -->
@@ -55,6 +66,7 @@
           this.model.role = this.role;
           this.model.id = this.id;
           this.model.thumb = this.thumb;
+          this.listAffectationsByUser()
         },
         data () {
           return {
@@ -66,6 +78,7 @@
               id: '',
               thumb: ''
             },
+            items: [],
           }
         },
         methods: {
@@ -98,6 +111,17 @@
                       });
                     }
                 );
+          },
+          listAffectationsByUser: function () {
+            const axios = require('axios');
+            let self = this;
+            // Make a request for a user with a given ID
+            axios.get('/api/affectations/list')
+                .then(function (response) {
+                  // handle success
+                  self.items = response.data.dataByUser;
+                  console.log(self.items)
+                });
           },
         },
     };

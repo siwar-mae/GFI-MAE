@@ -68,4 +68,19 @@ class AffectationRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    public function findByUser($user)
+    {
+        if ('' !== $user) {
+            return $this->createQueryBuilder('b')
+                ->where('b.user = :user')
+                ->setParameter('user', $user)
+                ->getQuery()
+                ->getArrayResult();
+        } else {
+            return $this->createQueryBuilder('b')
+                ->getQuery()
+                ->getArrayResult();
+        }
+    }
 }

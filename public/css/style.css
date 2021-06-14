@@ -3524,45 +3524,12 @@ ul.chat-available-user li a:hover {
     margin: 0 auto;
 }
 
-#external-events {
-    float: left;
-    width: 195px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    background: #eee;
-    text-align: left;
-}
-
-#external-events h4 {
-    font-size: 16px;
-    margin-top: 0;
-    padding-top: 1em;
-}
-
-#external-events .fc-event {
-    margin: 10px 0;
-    cursor: pointer;
-    background-color: #006400;
-    border: #006400;
-}
-
-#external-events p {
-    margin: 1.5em 0;
-    font-size: 11px;
-    color: white;
-}
-
-#external-events p input {
-    margin: 0;
-    vertical-align: middle;
-}
-
 #calendar {
     float: right;
     width: 900px;
     background: #2f323a;
 }
 
-.fc-unthemed .fc-today{
+.fc-today{
     background: #006400;
 }

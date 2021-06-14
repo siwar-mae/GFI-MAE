@@ -11,6 +11,7 @@ use App\Repository\UserRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\Security;
 
 class AffectationManager
 {
@@ -22,13 +23,18 @@ class AffectationManager
      * @var UserRepository|ObjectRepository
      */
     protected $userRepository;
+    /**
+     * @var Security
+     */
+    protected $security;
 
     public function __construct(
-        EntityManagerInterface $entityManager)
+        EntityManagerInterface $entityManager, Security $security)
     {
         $this->repository = $entityManager->getRepository(Affectation::class);
         $this->userRepository = $entityManager->getRepository(User::class);
         $this->entityManager = $entityManager;
+        $this->security = $security;
     }
 
     /**
@@ -58,6 +64,8 @@ class AffectationManager
 
     public function getData()
     {
-        return $this->repository->findAllArrayResult();
+        $dataByUser = $this->repository->findByUser($this->security->getUser());
+        $data = $this->repository->findByUser('');
+        return ['dataByUser' => $dataByUser, 'data' => $data];
     }
 }

@@ -29,6 +29,7 @@ export default {
       date: '',
       user: '',
       affectations: [],
+      events: [],
     };
   },
   methods: {
@@ -47,7 +48,7 @@ export default {
       axios.get('/api/affectations/list')
           .then(function (response) {
             // // handle success
-            self.affectations = response.data;
+            self.affectations = response.data.data;
           });
     },
   },
@@ -57,67 +58,66 @@ export default {
   mounted() {
     this.users = this.employees;
     this.listAffectation();
-  }
-};
-$(function() {
-  let calendarEl = document.getElementById('calendar');
-  let calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: [ 'dayGrid' ],
-    defaultView: 'dayGridMonth',
-    header: {
-      center: 'addEventButton'
-    },
-    customButtons: {
-      addEventButton: {
-        text: 'add event...',
-        click: function() {
-          var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-          var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'dayGrid' ],
+      defaultView: 'dayGridMonth',
+      header: {
+        center: 'addEventButton'
+      },
+      customButtons: {
+        addEventButton: {
+          text: 'Add Event...',
+          click: function() {
+            var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+            var date = new Date(dateStr + 'T00:00:00'); // will be in local time
 
-          if (!isNaN(date.valueOf())) { // valid?
-            this.user = prompt('Enter intervenant');
-            this.date = date;
-            const axios = require('axios');
-            let self = this;
-            const config = {
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'
-              }
-            };
-            axios.post('/api/affectations/post', {user: self.user, date: self.date}, config)
-                .then(response => {
-                      calendar.addEvent({
-                        title: this.user,
-                        start: date,
-                        allDay: true
+            if (!isNaN(date.valueOf())) { // valid?
+              this.user = prompt('Enter intervenant');
+              this.date = date;
+              const axios = require('axios');
+              let self = this;
+              const config = {
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded',
+                  'Accept': 'application/json'
+                }
+              };
+              axios.post('/api/affectations/post', {user: self.user, date: self.date}, config)
+                  .then(response => {
+                        calendar.addEvent({
+                          title: this.user,
+                          start: date,
+                          allDay: true,
+                          color: '#006400',
+                          textColor: 'white'
+                        });
+
+                        Vue.$toast.open({
+                          message: 'added_successfully',
+                          type: 'success',
+                          position: 'top-right',
+                          autohide: 3000 ,
+                          class: "p-3 mb-2 bg-info text-white"
+                        });
+                      }
+                      , (error) => {
+                        Vue.$toast.open({
+                          message: 'user_affected_to_this_date',
+                          type: 'error',
+                          position: 'top-right',
+                          autohide: 3000 ,
+                          class: "p-3 mb-2 bg-info text-white"
+                        });
                       });
-                      Vue.$toast.open({
-                        message: 'added_successfully',
-                        type: 'success',
-                        position: 'top-right',
-                        autohide: 3000 ,
-                        class: "p-3 mb-2 bg-info text-white"
-                      });
-                    }
-                    , (error) => {
-                      Vue.$toast.open({
-                        message: 'user_affected_to_this_date',
-                        type: 'error',
-                        position: 'top-right',
-                        autohide: 3000 ,
-                        class: "p-3 mb-2 bg-info text-white"
-                      });
-                    });
+            }
           }
         }
       }
-    }
-  });
-
-  calendar.render();
-
-});
+    });
+    calendar.render();
+  }
+};
 </script>
 <style scoped>
 
