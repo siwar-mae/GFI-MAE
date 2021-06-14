@@ -3530,6 +3530,10 @@ ul.chat-available-user li a:hover {
     background: #2f323a;
 }
 
-.fc-today{
+.fc-day{
     background: #006400;
+}
+
+.fc-day .fc-widget-content .fc-mon .fc-today {
+    background: red;
 }

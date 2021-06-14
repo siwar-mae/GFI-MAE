@@ -117,7 +117,12 @@ const messages = {
         required_thumb_field: 'Avatar fields required!',
         password: 'Password',
         required_pwd_field: 'Password fields required!',
-        affect_intervention: 'Affect intervention'
+        affect_intervention: 'Affect intervention',
+        welcome: 'Welcome',
+        todo: 'To do',
+        intervention: 'Intervention',
+        add_event: 'Add event',
+        enter_date: 'Enter a date in YYYY-MM-DD format'
     },
     fr: {
         id: 'ID',
@@ -189,8 +194,12 @@ const messages = {
         required_thumb_field: 'Champs avatar requis !',
         password: 'Mot de passe',
         required_pwd_field: 'Champs mot de passe requis !',
-        affect_intervention: 'Affecter intervention'
-
+        affect_intervention: 'Affecter intervention',
+        welcome: 'Bienvenue',
+        todo: 'A faire',
+        intervention: 'Intervention',
+        add_event: 'Ajouter événement',
+        enter_date: 'Saisissez une date au format AAAA-MM-JJ'
     }
 }
 

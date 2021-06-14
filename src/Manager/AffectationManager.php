@@ -44,21 +44,27 @@ class AffectationManager
         $affectation = new Affectation();
         $affectation->setDate(new DateTime($data['date']));
         $user = $this->userRepository->findOneBy(['email' => $data['user']]);
-        $affectation->setUser($user->getId());
-        $affectations = $this->repository->findAll();
-        if($affectations !== []){
-            $verify = $this->repository->findByUserAndDate($affectation->getUser(), $affectation->getDate());
-            if($verify === []){
+        $errors = [];
+        if($user === null){
+            array_push($errors, 'user_not_found');
+            return $errors;
+        }else{
+            $affectation->setUser($user->getId());
+            $affectations = $this->repository->findAll();
+            if($affectations !== []){
+                $verify = $this->repository->findByUserAndDate($affectation->getUser(), $affectation->getDate());
+                if($verify === []){
+                    $this->entityManager->persist($affectation);
+                    $this->entityManager->flush();
+                    return true;
+                }else {
+                    return false;
+                }
+            }else{
                 $this->entityManager->persist($affectation);
                 $this->entityManager->flush();
                 return true;
-            }else {
-                return false;
             }
-        }else{
-            $this->entityManager->persist($affectation);
-            $this->entityManager->flush();
-            return true;
         }
     }
 

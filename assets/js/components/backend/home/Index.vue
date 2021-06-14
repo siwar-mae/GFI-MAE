@@ -6,7 +6,7 @@
           <div class="row content-panel">
             <div class="col-md-4 profile-text mt mb centered">
               <div class="right-divider hidden-sm hidden-xs">
-                <h2> Welcome ! </h2>
+                <h2> {{ $t('welcome') }} ! </h2>
               </div>
             </div>
             <!-- /col-md-4 -->
@@ -30,12 +30,12 @@
         <!-- /row -->
       </div>
       <div class="detailed mt">
-        <h4>To do</h4>
+        <h4>{{ $t('todo') }}</h4>
         <div class="recent-activity" v-for="item in items">
           <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
           <div class="activity-panel">
-            <h5>Intervention</h5>
-            <p>Date: {{item.date}}</p>
+            <h5>{{ $t('intervention') }}</h5>
+            <p>{{ $t('date') }}: {{item.date}}</p>
           </div>
         </div>
         <!-- /recent-activity -->

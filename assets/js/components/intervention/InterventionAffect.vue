@@ -14,7 +14,6 @@
       </div>
     </section>
   </section>
-
 </template>
 
 <script>
@@ -67,13 +66,16 @@ export default {
       },
       customButtons: {
         addEventButton: {
-          text: 'Add Event...',
+          text: this.$t('add_event'),
           click: function() {
             var dateStr = prompt('Enter a date in YYYY-MM-DD format');
             var date = new Date(dateStr + 'T00:00:00'); // will be in local time
-
-            if (!isNaN(date.valueOf())) { // valid?
-              this.user = prompt('Enter intervenant');
+            var dateOfTheDay = new Date();
+            if (!isNaN(date.valueOf())
+                && (date.getMonth()+1 >= dateOfTheDay.getMonth()+1)
+                && (date.getFullYear() >= dateOfTheDay.getFullYear())
+                && date.getDate() >= dateOfTheDay.getDate()) { // valid?
+              this.user = prompt('Intervenant');
               this.date = date;
               const axios = require('axios');
               let self = this;
@@ -89,12 +91,12 @@ export default {
                           title: this.user,
                           start: date,
                           allDay: true,
-                          color: '#006400',
+                          color: '#2f323a',
                           textColor: 'white'
                         });
 
                         Vue.$toast.open({
-                          message: 'added_successfully',
+                          message: self.$t('added_successfully'),
                           type: 'success',
                           position: 'top-right',
                           autohide: 3000 ,
@@ -102,14 +104,33 @@ export default {
                         });
                       }
                       , (error) => {
-                        Vue.$toast.open({
-                          message: 'user_affected_to_this_date',
-                          type: 'error',
-                          position: 'top-right',
-                          autohide: 3000 ,
-                          class: "p-3 mb-2 bg-info text-white"
-                        });
+                        console.log()
+                        if(error.response.data.data === 'user_not_found'){
+                          Vue.$toast.open({
+                            message: 'user_not_found',
+                            type: 'error',
+                            position: 'top-right',
+                            autohide: 3000 ,
+                            class: "p-3 mb-2 bg-info text-white"
+                          });
+                        }else{
+                          Vue.$toast.open({
+                            message: 'user_affected_to_this_date',
+                            type: 'error',
+                            position: 'top-right',
+                            autohide: 3000 ,
+                            class: "p-3 mb-2 bg-info text-white"
+                          });
+                        }
                       });
+            }else{
+              Vue.$toast.open({
+                message: 'invalid_date',
+                type: 'error',
+                position: 'top-right',
+                autohide: 3000 ,
+                class: "p-3 mb-2 bg-info text-white"
+              });
             }
           }
         }

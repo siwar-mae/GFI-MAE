@@ -21,9 +21,12 @@ class PostController extends AbstractController
     public function __invoke(PostService $postService, Request $request)
     {
         $data = json_decode($request->getContent(), true);
-        if ($postService->post($data)) {
+        if ($postService->post($data) === true) {
             return new JsonResponse(['status' => 'ok', 'code' => Response::HTTP_CREATED], Response::HTTP_CREATED);
+        }else if(in_array('user_not_found', $postService->post($data))){
+            return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'user_not_found'], 400);
+        }else{
+            return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'affectation_not_added'], 400);
         }
-        return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'affectation_not_added'], 400);
     }
 }
