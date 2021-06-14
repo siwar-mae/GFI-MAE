@@ -46,9 +46,18 @@ class AffectationManager
                 $this->entityManager->persist($affectation);
                 $this->entityManager->flush();
                 return true;
+            }else {
+                return false;
             }
-        }else {
-            return false;
+        }else{
+            $this->entityManager->persist($affectation);
+            $this->entityManager->flush();
+            return true;
         }
+    }
+
+    public function getData()
+    {
+        return $this->repository->findAllArrayResult();
     }
 }

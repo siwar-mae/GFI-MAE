@@ -23,8 +23,8 @@ class Affectation
     private $date;
 
     /**
-    * @ORM\Column(type="integer", nullable=false)
-    */
+     * @ORM\Column(type="integer", nullable=false)
+     */
     private $user;
 
     public function getId(): ?int

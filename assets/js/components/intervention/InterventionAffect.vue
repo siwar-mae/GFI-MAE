@@ -15,7 +15,7 @@
               </div>
               <p>
                 <input type='checkbox' id='drop-remove' checked='checked' />
-                <label for='drop-remove'>remove after drop</label>
+                <label for='drop-remove' style="color: #666">remove after drop</label>
               </p>
             </div>
             <div id='calendar'></div>
@@ -39,6 +39,7 @@ export default {
       users: [],
       date: '',
       user: '',
+      affectations: [],
     };
   },
   methods: {
@@ -50,12 +51,23 @@ export default {
     formatDate: function (value) {
       return this.$options.filters.formatDate(value, 'fr');
     },
+    listAffectation: function () {
+      const axios = require('axios');
+      let self = this;
+      // Make a request for a user with a given ID
+      axios.get('/api/affectations/list')
+          .then(function (response) {
+            // // handle success
+            self.affectations = response.data;
+          });
+    },
   },
   props: {
     employees : Array,
   },
   mounted() {
     this.users = this.employees;
+    this.listAffectation();
   }
 };
 $(function() {
@@ -147,6 +159,15 @@ $(function() {
                });
             }
             , (error) => {
+              $('.fc-event-container').each(function(element) {
+
+              });
+              var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( self.user );
+              el.draggable({
+                zIndex: 999,
+                revert: true,
+                revertDuration: 0
+              });
               Vue.$toast.open({
                 message: 'user_affected_to_this_date',
                 type: 'error',

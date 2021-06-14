@@ -26,5 +26,4 @@ class PostController extends AbstractController
         }
         return new JsonResponse(['status' => 'ko', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'data' => 'affectation_not_added'], 400);
     }
-
 }

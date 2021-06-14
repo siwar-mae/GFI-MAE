@@ -58,4 +58,14 @@ class AffectationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getArrayResult();
     }
+
+    public function findAllArrayResult()
+    {
+        $qb = $this->getEntityManager()
+            ->createQueryBuilder()
+            ->select('u')
+            ->from(Affectation::class, 'u');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }
