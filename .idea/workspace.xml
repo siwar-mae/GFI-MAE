@@ -9,10 +9,7 @@
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionAffect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionAffect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/AffectationManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/AffectationManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AffectationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AffectationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Affectation.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -390,7 +387,8 @@
       <workItem from="1623222530041" duration="4309000" />
       <workItem from="1623234785656" duration="8646000" />
       <workItem from="1623331810587" duration="7872000" />
-      <workItem from="1623654832042" duration="13066000" />
+      <workItem from="1623654832042" duration="13341000" />
+      <workItem from="1623671720524" duration="1001000" />
     </task>
     <servers />
   </component>

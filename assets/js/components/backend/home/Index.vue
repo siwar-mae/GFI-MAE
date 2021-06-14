@@ -30,12 +30,12 @@
         <!-- /row -->
       </div>
       <div class="detailed mt">
-        <h4>Activities</h4>
+        <h4>To do</h4>
         <div class="recent-activity" v-for="item in items">
           <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
           <div class="activity-panel">
-            <h5>Intervention:  {{item.id}}</h5>
-            <p>Le: {{item.date.date}}</p>
+            <h5>Intervention</h5>
+            <p>Date: {{item.date}}</p>
           </div>
         </div>
         <!-- /recent-activity -->
@@ -120,7 +120,9 @@
                 .then(function (response) {
                   // handle success
                   self.items = response.data.dataByUser;
-                  console.log(self.items)
+                  self.items.map((item) => {
+                    item.date = self.$options.filters.formatDate(item.date.date, 'fr');
+                    return {...item}})
                 });
           },
         },
