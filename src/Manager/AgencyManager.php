@@ -3,7 +3,9 @@
 namespace App\Manager;
 
 use App\Entity\Agency;
+use App\Entity\Intervention;
 use App\Repository\AgencyRepository;
+use App\Repository\InterventionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Component\Security\Core\Security;
@@ -15,6 +17,10 @@ class AgencyManager
      */
     protected $repository;
     /**
+     * @var InterventionRepository|ObjectRepository
+     */
+    protected $interventionRepository;
+    /**
      * @var Security
      */
     protected $security;
@@ -23,12 +29,26 @@ class AgencyManager
         EntityManagerInterface $entityManager, Security $security)
     {
         $this->repository = $entityManager->getRepository(Agency::class);
+        $this->interventionRepository = $entityManager->getRepository(Intervention::class);
         $this->security = $security;
-        $this->entityManager = $entityManager;
     }
 
-    public function getData()
+    public function getData(): array
     {
-        return $this->repository->findAllArrayResult();
+        $all = [];
+        $agencies = $this->repository->findAllArrayResult();
+        $count = $this->interventionRepository->countByAgency();
+        foreach ($agencies as $agency){
+            foreach ($count as $item){
+                if($agency['name'] === $item['name']){
+                    $agency['percent'] = $item['total'];
+                }
+            }
+            array_push($agencies,$agency);
+            if(count($agency) === 5){
+                array_push($all, $agency);
+            }
+        }
+        return $all;
     }
 }

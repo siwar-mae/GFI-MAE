@@ -63,4 +63,13 @@ class InterventionRepository extends ServiceEntityRepository
                 ->getArrayResult();
         }
     }
+
+    public function countByAgency(){
+        return $this->createQueryBuilder('i')
+            ->select('count(i) as total')
+            ->join('i.agency', 'a')->addSelect('a.name')
+            ->groupBy('i.agency')
+            ->getQuery()
+            ->getResult();
+    }
 }

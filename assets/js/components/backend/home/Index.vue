@@ -16,33 +16,9 @@
               <li><p>2.000</p></li>
               <li><p>0</p></li>
             </ul>
-            <div class="bar">
-              <div class="title">JAN</div>
-              <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">85%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">FEB</div>
-              <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">MAR</div>
-              <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">APR</div>
-              <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
-            </div>
-            <div class="bar">
-              <div class="title">MAY</div>
-              <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">JUN</div>
-              <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
-            </div>
-            <div class="bar">
-              <div class="title">JUL</div>
-              <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
+            <div class="bar" v-for="agency in agencies">
+              <div class="title">{{ agency.name }}</div>
+              <div class="value tooltips" data-toggle="tooltip" data-placement="top">{{ agency.percent }}</div>
             </div>
           </div>
         </div>
@@ -54,6 +30,33 @@
 <script>
 
     export default {
-        name: "Index",
+      name: "Index",
+      data() {
+        return {
+          agencies: [],
+          count: [],
+          nbrAgencies: 0,
+        }
+      },
+      methods: {
+        getAgencies: async function () {
+          const axios = require('axios');
+          let self = this;
+          let response = await axios.get('/api/agencies/list');
+          return response.data.map(
+              function (agency) {
+                console.log(agency.percent);
+                // console.log(self.nbrAgencies);
+                let percent = agency.percent * (self.nbrAgencies / 100);
+                agency.percent = Math.round(percent)
+                // console.log(agency)
+                return agency;
+              })
+        },
+        },
+      mounted: async function() {
+        this.agencies = await this.getAgencies();
+        this.nbrAgencies = this.agencies.length;
+      },
     };
 </script>

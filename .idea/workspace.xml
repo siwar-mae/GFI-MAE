@@ -8,10 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/home/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/backend/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/backend/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/AgencyManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/AgencyManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/InterventionRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +320,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Manager/Backend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\story-feature-0-1\GFI-MAE\node_modules\typescript\lib" />
@@ -329,11 +328,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Manager\Backend" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\signature" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Affectation" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Service\Affectation" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Intervention" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\signature\add" />
