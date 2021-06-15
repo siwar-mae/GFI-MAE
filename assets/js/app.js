@@ -36,6 +36,7 @@ import UserNew from './components/backend/user/UserNew';
 import Index from './components/backend/home/Index';
 import InterventionReport from './components/intervention/InterventionReport';
 import UserEdit from './components/backend/user/UserEdit';
+import SignatureList from './components/signature/SignatureList';
 
 import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
@@ -214,5 +215,5 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     i18n,
-    components: {InterventionNew, InterventionList, UserList, UserNew, InterventionReport, Index, UserEdit, InterventionAffect}
+    components: {InterventionNew, InterventionList, UserList, UserNew, InterventionReport, Index, UserEdit, InterventionAffect, SignatureList}
 });
