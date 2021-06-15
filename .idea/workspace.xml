@@ -8,8 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/intervention/InterventionAffect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/intervention/InterventionAffect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Api/Intervention/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SignatureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SignatureController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseBack.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/signature/list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signature/list/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="HTML File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -319,7 +323,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/signature" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="ts.external.directory.path" value="C:\wamp64\www\story-feature-0-1\GFI-MAE\node_modules\typescript\lib" />
@@ -327,18 +331,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\signature" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Affectation" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Service\Affectation" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Intervention" />
-      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\assets\js\components\intervention" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\signature\add" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\templates\backend" />
       <recent name="C:\wamp64\www\story-feature-0-1\GFI-MAE\src\Controller\Api\Backend\Home" />
       <recent name="C:\wamp64\www\GFI\public\lib\advanced-datatable\css" />
-      <recent name="C:\wamp64\www\GFI\assets\js\components\home" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -390,7 +394,7 @@
       <workItem from="1623654832042" duration="13341000" />
       <workItem from="1623671720524" duration="13778000" />
       <workItem from="1623742730294" duration="373000" />
-      <workItem from="1623743124632" duration="662000" />
+      <workItem from="1623743124632" duration="8811000" />
     </task>
     <servers />
   </component>
