@@ -9,11 +9,9 @@
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SignatureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SignatureController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseBack.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signature/list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signature/list/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/home/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/backend/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/backend/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
