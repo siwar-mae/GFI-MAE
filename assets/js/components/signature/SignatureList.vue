@@ -4,12 +4,11 @@
       <h3><i class="fa fa-angle-right"></i> {{ $t('E-Signature') }}</h3>
       <div class="row mt">
         <div class="col-lg-12">
-          <h4><i class="fa fa-angle-right"></i> {{ $t('add') }} </h4>
           <div class="content-panel">
             <div class="adv-table" style="padding: 10px">
               <div class="row">
                 <div class="col-md-12">
-                  <p>Sign in the canvas below and save your signature as an image!</p>
+                  <p>{{ $t('save_your_signature_as_an_image') }}</p>
                 </div>
               </div>
               <div class="row">
@@ -21,20 +20,20 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
-                  <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+                  <button class="btn btn-primary" id="sig-submitBtn">{{ $t('submit_signature') }}</button>
+                  <button class="btn btn-default" id="sig-clearBtn">{{ $t('clear_signature') }}</button>
                 </div>
               </div>
               <br/>
               <div class="row">
                 <div class="col-md-12">
-                  <textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                  <textarea id="sig-dataUrl" class="form-control" rows="5">{{ $t('data_url') }}</textarea>
                 </div>
               </div>
               <br/>
               <div class="row">
                 <div class="col-md-12">
-                  <img id="sig-image" src="" alt="Your signature will go here!"/>
+                  <img id="sig-image" src="" :alt="$t('your_signature_will_go_here')"/>
                 </div>
               </div>
             </div>
@@ -44,13 +43,9 @@
     </section>
   </section>
 </template>
-
 <script>
 export default {
   name: "SignatureList.vue",
-  methods: {
-
-  },
   mounted() {
     window.requestAnimFrame = (function(callback) {
       return window.requestAnimationFrame ||

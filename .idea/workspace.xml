@@ -9,8 +9,11 @@
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CalendarController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signature/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signature/list/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/signature/SignatureList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SignatureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SignatureController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseBack.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/signature/list/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signature/list/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +394,7 @@
       <workItem from="1623654832042" duration="13341000" />
       <workItem from="1623671720524" duration="13778000" />
       <workItem from="1623742730294" duration="373000" />
-      <workItem from="1623743124632" duration="5174000" />
+      <workItem from="1623743124632" duration="8811000" />
     </task>
     <servers />
   </component>

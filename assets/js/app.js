@@ -123,7 +123,12 @@ const messages = {
         todo: 'To do',
         intervention: 'Intervention',
         add_event: 'Add event',
-        enter_date: 'Enter a date in YYYY-MM-DD format'
+        enter_date: 'Enter a date in YYYY-MM-DD format',
+        save_your_signature_as_an_image: 'Save your signature as an image!',
+        submit_signature: 'Submit Signature',
+        clear_signature: 'Clear signature',
+        data_url: 'Data URL for your signature will go here!',
+        your_signature_will_go_here: 'Your signature will go here!'
     },
     fr: {
         id: 'ID',
@@ -200,7 +205,12 @@ const messages = {
         todo: 'A faire',
         intervention: 'Intervention',
         add_event: 'Ajouter événement',
-        enter_date: 'Saisissez une date au format AAAA-MM-JJ'
+        enter_date: 'Saisissez une date au format AAAA-MM-JJ',
+        save_your_signature_as_an_image: "Enregistrez votre signature sous forme d'image !",
+        submit_signature: 'Soumettre la signature',
+        clear_signature: 'Effacer la signature',
+        data_url: "L'URL des données de votre signature ira ici !",
+        your_signature_will_go_here: 'Votre signature ira ici!'
     }
 }
 
