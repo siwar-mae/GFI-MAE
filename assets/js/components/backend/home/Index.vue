@@ -6,7 +6,7 @@
           <div class="border-head">
             <h3>{{ $t('welcome') }}</h3>
           </div>
-          <apexchart width="1500" type="bar" :options="options" :series="series"></apexchart>
+          <apexchart width="1500" type="bar" :options="options" :series="series[0].data"></apexchart>
         </div>
       </div>
     </section>
@@ -27,20 +27,6 @@ Vue.component('apexchart', VueApexCharts)
           agencies: [],
           count: [],
           nbrAgencies: 0,
-          // chartOptions: {
-          //   chart: {
-          //     id: 'vuechart-example'
-          //   },
-          //   xaxis: {
-          //     categories: [],
-          //     colors: ['#00897b']
-          //   },
-          // },
-          // series: [{
-          //   name: "Percent of interventions(%)",
-          //   backgroundColor: '#f87979',
-          //   data: [0.02, 0.04],
-          // }
           options: {
             chart: {
               id: 'vuechart-example'
@@ -77,15 +63,8 @@ Vue.component('apexchart', VueApexCharts)
         this.agencies = await this.getAgencies();
         this.agencies.forEach((element)=>{
           this.options.xaxis.categories.push(element.name)
-          this.series.forEach((item)=>{
-            item.data.push(element.percent)
-          })
+          this.series[0].data.push(element.percent)
         })
-        this.series = this.series.map(
-            function (test) {
-              test = test.data
-              return test;})
-        this.series = this.series[0];
         this.nbrAgencies = this.agencies.length;
       },
     };

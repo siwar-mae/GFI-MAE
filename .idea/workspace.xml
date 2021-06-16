@@ -9,8 +9,6 @@
     <list default="true" id="2b5d962f-d43b-400a-878e-1303b3841a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/backend/home/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,7 +392,7 @@
       <workItem from="1623743124632" duration="8811000" />
       <workItem from="1623827027664" duration="4326000" />
       <workItem from="1623839689190" duration="1382000" />
-      <workItem from="1623844660526" duration="11474000" />
+      <workItem from="1623844660526" duration="12528000" />
     </task>
     <servers />
   </component>
