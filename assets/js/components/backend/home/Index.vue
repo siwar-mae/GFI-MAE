@@ -6,7 +6,7 @@
           <div class="border-head">
             <h3>{{ $t('welcome') }}</h3>
           </div>
-          <apexchart width="1500" type="bar" :options="options" :series="series[0].data"></apexchart>
+            <div id="chart" ref="barchart"></div>
         </div>
       </div>
     </section>
@@ -25,33 +25,14 @@ Vue.component('apexchart', VueApexCharts)
       data() {
         return {
           agencies: [],
-          count: [],
           nbrAgencies: 0,
-          options: {
-            chart: {
-              id: 'vuechart-example'
-            },
-            xaxis: {
-              categories: []
-            },
-            title: {
-              text: 'Percent of interventions in agencies',
-              align: 'center',
-              style: {
-                fontSize:  '20px',
-              },
-            },
-            colors: ['#00897b']
-          },
-          series: [{
-            data: []
-          }]
+          names: [],
+          percents: [],
         }
       },
       methods: {
         getAgencies: async function () {
           const axios = require('axios');
-          let self = this;
           let response = await axios.get('/api/agencies/list');
           return response.data.map(
               function (agency) {
@@ -61,11 +42,28 @@ Vue.component('apexchart', VueApexCharts)
         },
       mounted: async function() {
         this.agencies = await this.getAgencies();
-        this.agencies.forEach((element)=>{
-          this.options.xaxis.categories.push(element.name)
-          this.series[0].data.push(element.percent)
-        })
         this.nbrAgencies = this.agencies.length;
+        this.names = this.agencies.map(element => ( element.name));
+        this.percents = this.agencies.map(element => ( element.percent))
+        const chart = new ApexCharts(this.$refs.barchart, {
+          chart: {
+            type: 'bar',
+            height: 400,
+          },
+          series: [{
+            name: this.$t('number_of_interventions_per_agency'),
+            data: this.percents
+          }],
+          xaxis: {
+            categories: this.names,
+          },
+          colors: ['#006400'],
+          title: {
+            text: this.$t('interventions_per_agency'),
+            align: 'center'
+          },
+        })
+        await chart.render()
       },
     };
 </script>

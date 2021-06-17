@@ -129,7 +129,9 @@ const messages = {
         submit_signature: 'Submit Signature',
         clear_signature: 'Clear signature',
         data_url: 'Data URL for your signature will go here!',
-        your_signature_will_go_here: 'Your signature will go here!'
+        your_signature_will_go_here: 'Your signature will go here!',
+        number_of_interventions_per_agency: "Number of interventions per agency",
+        interventions_per_agency: "Interventions per agency",
     },
     fr: {
         id: 'ID',
@@ -211,7 +213,9 @@ const messages = {
         submit_signature: 'Soumettre la signature',
         clear_signature: 'Effacer la signature',
         data_url: "L'URL des données de votre signature ira ici !",
-        your_signature_will_go_here: 'Votre signature ira ici!'
+        your_signature_will_go_here: 'Votre signature ira ici!',
+        number_of_interventions_per_agency: "Nombre d'interventions par agence",
+        interventions_per_agency: "Interventions par agence",
     }
 }
 
