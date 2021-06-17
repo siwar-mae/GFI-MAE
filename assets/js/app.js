@@ -33,7 +33,8 @@ Vue.component('field-date-picker-mazars', DatePickerMazars);
 Vue.component('field-select-mazars', SelectMazars);
 import UserList from './components/backend/user/UserList';
 import UserNew from './components/backend/user/UserNew';
-import Index from './components/backend/home/Index';
+import Index from './components/home/Index';
+import IndexBackend from './components/backend/home/Index';
 import InterventionReport from './components/intervention/InterventionReport';
 import UserEdit from './components/backend/user/UserEdit';
 import SignatureList from './components/signature/SignatureList';
@@ -128,7 +129,9 @@ const messages = {
         submit_signature: 'Submit Signature',
         clear_signature: 'Clear signature',
         data_url: 'Data URL for your signature will go here!',
-        your_signature_will_go_here: 'Your signature will go here!'
+        your_signature_will_go_here: 'Your signature will go here!',
+        number_of_interventions_per_agency: "Number of interventions per agency",
+        interventions_per_agency: "Interventions per agency",
     },
     fr: {
         id: 'ID',
@@ -210,7 +213,9 @@ const messages = {
         submit_signature: 'Soumettre la signature',
         clear_signature: 'Effacer la signature',
         data_url: "L'URL des données de votre signature ira ici !",
-        your_signature_will_go_here: 'Votre signature ira ici!'
+        your_signature_will_go_here: 'Votre signature ira ici!',
+        number_of_interventions_per_agency: "Nombre d'interventions par agence",
+        interventions_per_agency: "Interventions par agence",
     }
 }
 
@@ -225,5 +230,5 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     i18n,
-    components: {InterventionNew, InterventionList, UserList, UserNew, InterventionReport, Index, UserEdit, InterventionAffect, SignatureList}
+    components: {InterventionNew, InterventionList, UserList, UserNew, InterventionReport, Index, UserEdit, InterventionAffect, SignatureList, IndexBackend}
 });

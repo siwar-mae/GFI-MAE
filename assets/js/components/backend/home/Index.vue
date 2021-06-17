@@ -1,130 +1,69 @@
 <template>
   <section id="main-content">
-    <section class="wrapper site-min-height">
-      <div class="row mt">
-        <div class="col-lg-12">
-          <div class="row content-panel">
-            <div class="col-md-4 profile-text mt mb centered">
-              <div class="right-divider hidden-sm hidden-xs">
-                <h2> {{ $t('welcome') }} ! </h2>
-              </div>
-            </div>
-            <!-- /col-md-4 -->
-            <div class="col-md-4 profile-text">
-              <h2>{{ fullName }}</h2>
-              <h4>{{ role }}</h4>
-              <h4>{{ email }}</h4>
-              <h4>{{ address }}</h4>
-            </div>
-            <!-- /col-md-4 -->
-            <div class="col-md-4 centered">
-              <div class="profile-pic">
-                <p><img v-bind:src=model.thumb class="img-circle"></p>
-              </div>
-            </div>
-            <!-- /col-md-4 -->
+    <section class="wrapper">
+      <div class="row">
+        <div class="col-lg-12 main-chart">
+          <div class="border-head">
+            <h3>{{ $t('welcome') }}</h3>
           </div>
-          <!-- /row -->
+            <div id="chart" ref="barchart"></div>
         </div>
-        <!-- /col-lg-12 -->
-        <!-- /row -->
       </div>
-      <div class="detailed mt">
-        <h4>{{ $t('todo') }}</h4>
-        <div class="recent-activity" v-for="item in items">
-          <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
-          <div class="activity-panel">
-            <h5>{{ $t('intervention') }}</h5>
-            <p>{{ $t('date') }}: {{item.date}}</p>
-          </div>
-        </div>
-        <!-- /recent-activity -->
-      </div>
-      <!-- /container -->
     </section>
-    <!-- /wrapper -->
   </section>
 </template>
 
 <script>
-    import Vue from "vue";
+import Vue from 'vue';
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
 
     export default {
-        name: "IndexBackend",
-        props: {
-          fullName: String,
-          email: String,
-          address: String,
-          role: String,
-          id: String,
-          thumb: String
+      name: "Index",
+      data() {
+        return {
+          agencies: [],
+          nbrAgencies: 0,
+          names: [],
+          percents: [],
+        }
+      },
+      methods: {
+        getAgencies: async function () {
+          const axios = require('axios');
+          let response = await axios.get('/api/agencies/list');
+          return response.data.map(
+              function (agency) {
+                agency.percent = agency.percent * (response.data.length / 100);
+                return agency;})
         },
-        mounted() {
-          this.model.fullName = this.fullName;
-          this.model.email = this.email;
-          this.model.address = this.address;
-          this.model.role = this.role;
-          this.model.id = this.id;
-          this.model.thumb = this.thumb;
-          this.listAffectationsByUser()
         },
-        data () {
-          return {
-            model: {
-              email: '',
-              fullName: '',
-              role: '',
-              address: '',
-              id: '',
-              thumb: ''
-            },
-            items: [],
-          }
-        },
-        methods: {
-          put: function () {
-            const axios = require('axios');
-            let self = this;
-            const config = {
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'
-              }
-            };
-            axios.put('/api/users/put', self.model, config)
-                .then(response => {
-                      Vue.$toast.open({
-                        message: this.$t('updated_successfully'),
-                        type: 'success',
-                        position: 'top-right',
-                        autohide: 3000 ,
-                        class: "p-3 mb-2 bg-info text-white"
-                      });
-                    }
-                    , (error) => {
-                      Vue.$toast.open({
-                        message: this.$t('error'),
-                        type: 'error',
-                        position: 'top-right',
-                        autohide: 3000 ,
-                        class: "p-3 mb-2 bg-info text-white"
-                      });
-                    }
-                );
+      mounted: async function() {
+        this.agencies = await this.getAgencies();
+        this.nbrAgencies = this.agencies.length;
+        this.names = this.agencies.map(element => ( element.name));
+        this.percents = this.agencies.map(element => ( element.percent))
+        const chart = new ApexCharts(this.$refs.barchart, {
+          chart: {
+            type: 'bar',
+            height: 400,
           },
-          listAffectationsByUser: function () {
-            const axios = require('axios');
-            let self = this;
-            // Make a request for a user with a given ID
-            axios.get('/api/affectations/list')
-                .then(function (response) {
-                  // handle success
-                  self.items = response.data.dataByUser;
-                  self.items.map((item) => {
-                    item.date = self.$options.filters.formatDate(item.date.date, 'fr');
-                    return {...item}})
-                });
+          series: [{
+            name: this.$t('number_of_interventions_per_agency'),
+            data: this.percents
+          }],
+          xaxis: {
+            categories: this.names,
           },
-        },
+          colors: ['#006400'],
+          title: {
+            text: this.$t('interventions_per_agency'),
+            align: 'center'
+          },
+        })
+        await chart.render()
+      },
     };
 </script>
